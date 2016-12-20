@@ -17,23 +17,28 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
 2. At this point you can import `@trendmicro/react-paginations` and its styles in your application as follows:
 
   ```js
-  import Paginations from '@trendmicro/react-paginations';
+  import { TablePagination } from '@trendmicro/react-paginations';
 
   // Be sure to include styles at some point, probably during your bootstraping
-  import '@trendmicro/react-buttons/dist/react-buttons.css';
+  import '@trendmicro/react-buttons/dist/react-buttons.css'; // required dependency
   import '@trendmicro/react-paginations/dist/react-paginations.css';
   ```
 
 ## Usage
 
 ```js
-<Paginations
-    className="component"
->
-    GitHub
-</Paginations>
+<TablePagination
+    type="full"
+    page={this.state.page}
+    pageLength={this.state.pageLength}
+    totalRecords={state.totalRecords}
+    onPageChange={({ page, pageLength }) => {
+        this.setState({ page, pageLength })
+    }}
+    prevPageText={<i className="fa fa-angle-left" aria-hidden />}
+    nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+/>
 ```
-
 
 ## API
 
