@@ -225,8 +225,12 @@
 	                                            pageLength: state.full.pageLength,
 	                                            totalRecords: state.full.totalRecords,
 	                                            onPageChange: actions.full.onPageChange,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    ),
 	                                    _react2.default.createElement(
@@ -237,8 +241,12 @@
 	                                            page: 1,
 	                                            pageLength: state.full.pageLength,
 	                                            totalRecords: 0,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    )
 	                                )
@@ -271,8 +279,12 @@
 	                                            pageLength: state.reduced.pageLength,
 	                                            totalRecords: state.reduced.totalRecords,
 	                                            onPageChange: actions.reduced.onPageChange,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    ),
 	                                    _react2.default.createElement(
@@ -283,8 +295,12 @@
 	                                            page: 1,
 	                                            pageLength: state.reduced.pageLength,
 	                                            totalRecords: 0,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    )
 	                                )
@@ -317,8 +333,12 @@
 	                                            pageLength: state.minor.pageLength,
 	                                            totalRecords: state.minor.totalRecords,
 	                                            onPageChange: actions.minor.onPageChange,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    ),
 	                                    _react2.default.createElement(
@@ -329,8 +349,12 @@
 	                                            page: 1,
 	                                            pageLength: state.minor.pageLength,
 	                                            totalRecords: 0,
-	                                            prevPageText: _react2.default.createElement('i', { className: 'fa fa-angle-left', 'aria-hidden': true }),
-	                                            nextPageText: _react2.default.createElement('i', { className: 'fa fa-angle-right', 'aria-hidden': true })
+	                                            prevPageRenderer: function prevPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+	                                            },
+	                                            nextPageRenderer: function nextPageRenderer() {
+	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+	                                            }
 	                                        })
 	                                    )
 	                                )
@@ -23681,4 +23705,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map?56e6ca5a4e58e1e9a9eb
+//# sourceMappingURL=bundle.js.map?740ee672e0fd840e6b29
