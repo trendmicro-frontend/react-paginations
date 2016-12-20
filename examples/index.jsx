@@ -87,8 +87,8 @@ class App extends Component {
                                             pageLength={state.full.pageLength}
                                             totalRecords={state.full.totalRecords}
                                             onPageChange={actions.full.onPageChange}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                     <td style={{ width: '50%' }}>
@@ -97,8 +97,8 @@ class App extends Component {
                                             page={1}
                                             pageLength={state.full.pageLength}
                                             totalRecords={0}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                 </tr>
@@ -117,8 +117,8 @@ class App extends Component {
                                             pageLength={state.reduced.pageLength}
                                             totalRecords={state.reduced.totalRecords}
                                             onPageChange={actions.reduced.onPageChange}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                     <td style={{ width: '50%' }}>
@@ -127,8 +127,8 @@ class App extends Component {
                                             page={1}
                                             pageLength={state.reduced.pageLength}
                                             totalRecords={0}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                 </tr>
@@ -147,8 +147,8 @@ class App extends Component {
                                             pageLength={state.minor.pageLength}
                                             totalRecords={state.minor.totalRecords}
                                             onPageChange={actions.minor.onPageChange}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                     <td style={{ width: '50%' }}>
@@ -157,8 +157,8 @@ class App extends Component {
                                             page={1}
                                             pageLength={state.minor.pageLength}
                                             totalRecords={0}
-                                            prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-                                            nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+                                            prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                            nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
                                 </tr>

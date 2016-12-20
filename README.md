@@ -35,8 +35,8 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
     onPageChange={({ page, pageLength }) => {
         this.setState({ page, pageLength })
     }}
-    prevPageText={<i className="fa fa-angle-left" aria-hidden />}
-    nextPageText={<i className="fa fa-angle-right" aria-hidden />}
+    prevPageRenderer={() => <i className="fa fa-angle-left" />}
+    nextPageRenderer={() => <i className="fa fa-angle-right" />}
 />
 ```
 
