@@ -31,7 +31,7 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
     type="full"
     page={this.state.page}
     pageLength={this.state.pageLength}
-    totalRecords={state.totalRecords}
+    totalRecords={this.state.totalRecords}
     onPageChange={({ page, pageLength }) => {
         this.setState({ page, pageLength })
     }}
@@ -44,6 +44,8 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
 
 ### Properties
 
+#### TablePagination
+
 <table>
   <thead>
     <tr>
@@ -55,14 +57,62 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
   </thead>
   <tbody>
     <tr>
+      <td>type</td>
+      <td>String</td>
+      <td>'full'</td>
+      <td>'full', 'reduced', or 'minor'</td>
+    </tr>
+    <tr>
+      <td>lengthMenu</td>
+      <td>Array</td>
+      <td>[10, 25, 50, 100]</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>Number</td>
+      <td>1</td>
       <td></td>
+    </tr>
+    <tr>
+      <td>pageLength</td>
+      <td>Number</td>
+      <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>totalRecords</td>
+      <td>Number</td>
+      <td>0</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>onPageChange</td>
+      <td>Function</td>
       <td></td>
       <td></td>
     </tr>
     <tr>
+      <td>prevPageRenderer</td>
+      <td>Function</td>
       <td></td>
       <td></td>
+    </tr>
+    <tr>
+      <td>nextPageRenderer</td>
+      <td>Function</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>pageRecordsRenderer</td>
+      <td>Function({ totalRecords, from, to })</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>pageLengthRenderer</td>
+      <td>Function({ pageLength })</td>
       <td></td>
       <td></td>
     </tr>
