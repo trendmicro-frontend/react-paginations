@@ -88,7 +88,7 @@
 	            full: {
 	                page: 1,
 	                pageLength: 10,
-	                totalRecords: 100000
+	                totalRecords: 1000 * 1000
 	            },
 	            reduced: {
 	                page: 1,
@@ -22293,8 +22293,12 @@
 	                    _options$pageLength = _options.pageLength,
 	                    pageLength = _options$pageLength === undefined ? _this.props.pageLength : _options$pageLength;
 	
-	                var currentPage = page > Math.ceil(totalRecords / pageLength) ? Math.ceil(totalRecords / pageLength) : page;
-	                _this.props.onPageChange({ page: currentPage, pageLength: pageLength });
+	                var pageMin = 1;
+	                var pageMax = Math.max(Math.ceil(totalRecords / pageLength), 1);
+	                _this.props.onPageChange({
+	                    page: limit(page, pageMin, pageMax),
+	                    pageLength: pageLength
+	                });
 	            }
 	        }, _temp), _possibleConstructorReturn(_this, _ret);
 	    }
@@ -22961,4 +22965,4 @@
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map?b5af8b8fa614a8884b02
+//# sourceMappingURL=bundle.js.map?5ca0448c788336f05c95
