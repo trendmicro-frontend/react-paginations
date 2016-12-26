@@ -45,6 +45,13 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: 'style!css?-autoprefixer'
+            },
+            {
+                test: /\.svg$/,
+                loader: 'url',
+                query: {
+                    limit: 8192
+                }
             }
         ]
     },

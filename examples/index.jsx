@@ -78,9 +78,19 @@ class App extends Component {
                     <div className="col-sm-12">
                         <h4>Full</h4>
                         <table className="table table-bordered">
+                            <thead>
+                                <tr style={{ backgroundColor: '#f8f8f8' }}>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Total records: {state.full.totalRecords}
+                                    </th>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Empty records
+                                    </th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="full"
                                             page={state.full.page}
@@ -91,12 +101,13 @@ class App extends Component {
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="full"
                                             page={1}
                                             pageLength={state.full.pageLength}
                                             totalRecords={0}
+                                            onPageChange={actions.full.onPageChange}
                                             prevPageRenderer={() => <i className="fa fa-angle-left" />}
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
@@ -108,9 +119,19 @@ class App extends Component {
                     <div className="col-sm-12">
                         <h4>Reduced</h4>
                         <table className="table table-bordered">
+                            <thead>
+                                <tr style={{ backgroundColor: '#f8f8f8' }}>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Total records: {state.reduced.totalRecords}
+                                    </th>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Empty records
+                                    </th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="reduced"
                                             page={state.reduced.page}
@@ -121,12 +142,13 @@ class App extends Component {
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="reduced"
                                             page={1}
                                             pageLength={state.reduced.pageLength}
                                             totalRecords={0}
+                                            onPageChange={actions.reduced.onPageChange}
                                             prevPageRenderer={() => <i className="fa fa-angle-left" />}
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
@@ -138,9 +160,19 @@ class App extends Component {
                     <div className="col-sm-12" style={{ marginBottom: 20 }}>
                         <h4>Minor</h4>
                         <table className="table table-bordered">
+                            <thead>
+                                <tr style={{ backgroundColor: '#f8f8f8' }}>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Total records: {state.minor.totalRecords}
+                                    </th>
+                                    <th style={{ paddingLeft: 16 }}>
+                                        Empty records
+                                    </th>
+                                </tr>
+                            </thead>
                             <tbody>
                                 <tr>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="minor"
                                             page={state.minor.page}
@@ -151,12 +183,13 @@ class App extends Component {
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />
                                     </td>
-                                    <td style={{ width: '50%' }}>
+                                    <td style={{ width: '50%', padding: 0 }}>
                                         <TablePagination
                                             type="minor"
                                             page={1}
                                             pageLength={state.minor.pageLength}
                                             totalRecords={0}
+                                            onPageChange={actions.minor.onPageChange}
                                             prevPageRenderer={() => <i className="fa fa-angle-left" />}
                                             nextPageRenderer={() => <i className="fa fa-angle-right" />}
                                         />

@@ -1,6 +1,6 @@
 {
   "name": "@trendmicro/react-paginations",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "Trend Micro Components: React Paginations",
   "main": "lib/index.js",
   "files": [
@@ -47,7 +47,6 @@
   },
   "dependencies": {
     "@trendmicro/react-anchor": "^0.5.2",
-    "@trendmicro/react-buttons": "^0.4.4",
     "classnames": "^2.2.5",
     "react-addons-shallow-compare": "^0.14.0 || ^15.0.0",
     "react-input-autosize": "^1.1.0"
@@ -82,6 +81,7 @@
     "stylint-loader": "~1.0.0",
     "stylus-loader": "~2.4.0",
     "tap": "~8.0.1",
+    "url-loader": "~0.5.7",
     "webpack": "~1.14.0",
     "webpack-dev-server": "~1.16.2"
   }

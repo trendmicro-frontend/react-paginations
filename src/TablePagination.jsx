@@ -1,6 +1,5 @@
 /* eslimt react/no-set-state: 0 */
 import Anchor from '@trendmicro/react-anchor';
-import { ButtonDropdown } from '@trendmicro/react-buttons';
 import classNames from 'classnames';
 import React, { Component, PropTypes } from 'react';
 import AutosizeInput from 'react-input-autosize';
@@ -17,9 +16,9 @@ const limit = (value, min, max) => {
 class TablePagination extends Component {
     static propTypes = {
         type: PropTypes.oneOf(['full', 'reduced', 'minor']),
-        lengthMenu: PropTypes.array,
         page: PropTypes.number,
         pageLength: PropTypes.number,
+        pageLengthMenu: PropTypes.array,
         totalRecords: PropTypes.number,
         onPageChange: PropTypes.func,
         prevPageRenderer: PropTypes.func,
@@ -29,9 +28,9 @@ class TablePagination extends Component {
     };
     static defaultProps = {
         type: 'full',
-        lengthMenu: [10, 25, 50, 100],
         page: 1,
         pageLength: 10,
+        pageLengthMenu: [10, 25, 50, 100],
         totalRecords: 0,
         onPageChange: () => {},
         prevPageRenderer: () => {
@@ -48,19 +47,31 @@ class TablePagination extends Component {
             return `Records: ${totalRecords}`;
         },
         pageLengthRenderer: ({ pageLength }) => {
-            return `${pageLength} per page`;
+            return (
+                <span>
+                    {`${pageLength} per page`}
+                    <i className={styles.caret} />
+                </span>
+            );
         }
     };
 
     state = {
+        shouldOpenDropdownMenu: false,
         page: this.props.page
     };
     actions = {
-        handlePageChange: (options) => {
+        toggleDropdownMenu: () => {
+            this.setState({ shouldOpenDropdownMenu: !this.state.shouldOpenDropdownMenu });
+        },
+        closeDropdownMenu: () => {
+            this.setState({ shouldOpenDropdownMenu: false });
+        },
+        changePage: (options) => {
+            const totalRecords = this.props.totalRecords;
             const {
                 page = this.props.page,
-                pageLength = this.props.pageLength,
-                totalRecords = this.props.totalRecords
+                pageLength = this.props.pageLength
             } = { ...options };
 
             const currentPage = (page > Math.ceil(totalRecords / pageLength)) ? Math.ceil(totalRecords / pageLength) : page;
@@ -77,13 +88,13 @@ class TablePagination extends Component {
         const {
             type,
             totalRecords = 0,
-            lengthMenu,
+            pageLengthMenu,
             prevPageRenderer,
             nextPageRenderer,
             pageRecordsRenderer,
             pageLengthRenderer
         } = this.props;
-        const pageLength = this.props.pageLength || lengthMenu[0] || 10;
+        const pageLength = this.props.pageLength || pageLengthMenu[0] || 10;
         const totalPages = totalRecords > 0 ? Math.ceil(totalRecords / pageLength) : 1;
         const page = limit(this.props.page, 1, totalPages);
         const from = limit((page - 1) * pageLength + 1, 1, totalRecords);
@@ -98,19 +109,42 @@ class TablePagination extends Component {
                         {pageRecordsRenderer({ totalRecords, from, to })}
                     </div>
                     {(type !== 'minor') &&
-                    <ButtonDropdown
-                        dropdownStyle="text"
-                        options={lengthMenu.map(length => {
-                            return {
-                                label: length,
-                                value: length
-                            };
-                        })}
-                        value={pageLength}
-                        customValueRenderer={option => pageLengthRenderer({ pageLength: option.value })}
+                    <div
+                        className={classNames(
+                            styles.dropdown,
+                            { [styles.open]: this.state.shouldOpenDropdownMenu }
+                        )}
                     >
-                        {pageLengthRenderer({ pageLength })}
-                    </ButtonDropdown>
+                        <button
+                            type="button"
+                            className={classNames(
+                                styles.btn,
+                                styles.dropdownToggle
+                            )}
+                            onClick={this.actions.toggleDropdownMenu}
+                            onBlur={this.actions.closeDropdownMenu}
+                        >
+                            {pageLengthRenderer({ pageLength })}
+                        </button>
+                        <ul className={styles.dropdownMenu}>
+                            {pageLengthMenu.map(val =>
+                                <li
+                                    key={val}
+                                    className={classNames(
+                                        { [styles.selected]: pageLength === val }
+                                    )}
+                                    onMouseDown={() => {
+                                        this.actions.changePage({
+                                            page: (val !== pageLength) ? 1 : page,
+                                            pageLength: val
+                                        });
+                                    }}
+                                >
+                                    <Anchor>{val}</Anchor>
+                                </li>
+                            )}
+                        </ul>
+                    </div>
                     }
                     {(type !== 'reduced' && type !== 'minor') &&
                         <div className={styles.paginationInput}>
@@ -135,7 +169,7 @@ class TablePagination extends Component {
                                         this.setState({ page: page });
                                     }
 
-                                    this.actions.handlePageChange({ page: page });
+                                    this.actions.changePage({ page: page });
                                 }}
                             />
                             &nbsp;
@@ -160,7 +194,7 @@ class TablePagination extends Component {
                                             this.setState({ page: prevPage });
                                         }
 
-                                        this.actions.handlePageChange({ page: prevPage });
+                                        this.actions.changePage({ page: prevPage });
                                     }}
                                 >
                                     {prevPageRenderer()}
@@ -180,7 +214,7 @@ class TablePagination extends Component {
                                             this.setState({ page: nextPage });
                                         }
 
-                                        this.actions.handlePageChange({ page: nextPage });
+                                        this.actions.changePage({ page: nextPage });
                                     }}
                                 >
                                     {nextPageRenderer()}

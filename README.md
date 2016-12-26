@@ -20,7 +20,6 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
   import { TablePagination } from '@trendmicro/react-paginations';
 
   // Be sure to include styles at some point, probably during your bootstraping
-  import '@trendmicro/react-buttons/dist/react-buttons.css'; // required dependency
   import '@trendmicro/react-paginations/dist/react-paginations.css';
   ```
 
@@ -63,12 +62,6 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
       <td>'full', 'reduced', or 'minor'</td>
     </tr>
     <tr>
-      <td>lengthMenu</td>
-      <td>Array</td>
-      <td>[10, 25, 50, 100]</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>page</td>
       <td>Number</td>
       <td>1</td>
@@ -78,6 +71,12 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
       <td>pageLength</td>
       <td>Number</td>
       <td>10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>pageLengthMenu</td>
+      <td>Array</td>
+      <td>[10, 25, 50, 100]</td>
       <td></td>
     </tr>
     <tr>

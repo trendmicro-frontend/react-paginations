@@ -211,6 +211,25 @@
 	                            'table',
 	                            { className: 'table table-bordered' },
 	                            _react2.default.createElement(
+	                                'thead',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'tr',
+	                                    { style: { backgroundColor: '#f8f8f8' } },
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Total records: ',
+	                                        state.full.totalRecords
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Empty records'
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
 	                                'tbody',
 	                                null,
 	                                _react2.default.createElement(
@@ -218,7 +237,7 @@
 	                                    null,
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'full',
 	                                            page: state.full.page,
@@ -235,12 +254,13 @@
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'full',
 	                                            page: 1,
 	                                            pageLength: state.full.pageLength,
 	                                            totalRecords: 0,
+	                                            onPageChange: actions.full.onPageChange,
 	                                            prevPageRenderer: function prevPageRenderer() {
 	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
 	                                            },
@@ -265,6 +285,25 @@
 	                            'table',
 	                            { className: 'table table-bordered' },
 	                            _react2.default.createElement(
+	                                'thead',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'tr',
+	                                    { style: { backgroundColor: '#f8f8f8' } },
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Total records: ',
+	                                        state.reduced.totalRecords
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Empty records'
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
 	                                'tbody',
 	                                null,
 	                                _react2.default.createElement(
@@ -272,7 +311,7 @@
 	                                    null,
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'reduced',
 	                                            page: state.reduced.page,
@@ -289,12 +328,13 @@
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'reduced',
 	                                            page: 1,
 	                                            pageLength: state.reduced.pageLength,
 	                                            totalRecords: 0,
+	                                            onPageChange: actions.reduced.onPageChange,
 	                                            prevPageRenderer: function prevPageRenderer() {
 	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
 	                                            },
@@ -319,6 +359,25 @@
 	                            'table',
 	                            { className: 'table table-bordered' },
 	                            _react2.default.createElement(
+	                                'thead',
+	                                null,
+	                                _react2.default.createElement(
+	                                    'tr',
+	                                    { style: { backgroundColor: '#f8f8f8' } },
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Total records: ',
+	                                        state.minor.totalRecords
+	                                    ),
+	                                    _react2.default.createElement(
+	                                        'th',
+	                                        { style: { paddingLeft: 16 } },
+	                                        'Empty records'
+	                                    )
+	                                )
+	                            ),
+	                            _react2.default.createElement(
 	                                'tbody',
 	                                null,
 	                                _react2.default.createElement(
@@ -326,7 +385,7 @@
 	                                    null,
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'minor',
 	                                            page: state.minor.page,
@@ -343,12 +402,13 @@
 	                                    ),
 	                                    _react2.default.createElement(
 	                                        'td',
-	                                        { style: { width: '50%' } },
+	                                        { style: { width: '50%', padding: 0 } },
 	                                        _react2.default.createElement(_src.TablePagination, {
 	                                            type: 'minor',
 	                                            page: 1,
 	                                            pageLength: state.minor.pageLength,
 	                                            totalRecords: 0,
+	                                            onPageChange: actions.minor.onPageChange,
 	                                            prevPageRenderer: function prevPageRenderer() {
 	                                                return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
 	                                            },
@@ -22166,9 +22226,7 @@
 	
 	var _reactAnchor2 = _interopRequireDefault(_reactAnchor);
 	
-	var _reactButtons = __webpack_require__(188);
-	
-	var _classnames = __webpack_require__(189);
+	var _classnames = __webpack_require__(188);
 	
 	var _classnames2 = _interopRequireDefault(_classnames);
 	
@@ -22176,11 +22234,11 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
-	var _reactInputAutosize = __webpack_require__(190);
+	var _reactInputAutosize = __webpack_require__(189);
 	
 	var _reactInputAutosize2 = _interopRequireDefault(_reactInputAutosize);
 	
-	var _index = __webpack_require__(191);
+	var _index = __webpack_require__(190);
 	
 	var _index2 = _interopRequireDefault(_index);
 	
@@ -22217,16 +22275,23 @@
 	        }
 	
 	        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = TablePagination.__proto__ || Object.getPrototypeOf(TablePagination)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+	            shouldOpenDropdownMenu: false,
 	            page: _this.props.page
 	        }, _this.actions = {
-	            handlePageChange: function handlePageChange(options) {
+	            toggleDropdownMenu: function toggleDropdownMenu() {
+	                _this.setState({ shouldOpenDropdownMenu: !_this.state.shouldOpenDropdownMenu });
+	            },
+	            closeDropdownMenu: function closeDropdownMenu() {
+	                _this.setState({ shouldOpenDropdownMenu: false });
+	            },
+	            changePage: function changePage(options) {
+	                var totalRecords = _this.props.totalRecords;
+	
 	                var _options = _extends({}, options),
 	                    _options$page = _options.page,
 	                    page = _options$page === undefined ? _this.props.page : _options$page,
 	                    _options$pageLength = _options.pageLength,
-	                    pageLength = _options$pageLength === undefined ? _this.props.pageLength : _options$pageLength,
-	                    _options$totalRecords = _options.totalRecords,
-	                    totalRecords = _options$totalRecords === undefined ? _this.props.totalRecords : _options$totalRecords;
+	                    pageLength = _options$pageLength === undefined ? _this.props.pageLength : _options$pageLength;
 	
 	                var currentPage = page > Math.ceil(totalRecords / pageLength) ? Math.ceil(totalRecords / pageLength) : page;
 	                _this.props.onPageChange({ page: currentPage, pageLength: pageLength });
@@ -22250,13 +22315,13 @@
 	                type = _props.type,
 	                _props$totalRecords = _props.totalRecords,
 	                totalRecords = _props$totalRecords === undefined ? 0 : _props$totalRecords,
-	                lengthMenu = _props.lengthMenu,
+	                pageLengthMenu = _props.pageLengthMenu,
 	                prevPageRenderer = _props.prevPageRenderer,
 	                nextPageRenderer = _props.nextPageRenderer,
 	                pageRecordsRenderer = _props.pageRecordsRenderer,
 	                pageLengthRenderer = _props.pageLengthRenderer;
 	
-	            var pageLength = this.props.pageLength || lengthMenu[0] || 10;
+	            var pageLength = this.props.pageLength || pageLengthMenu[0] || 10;
 	            var totalPages = totalRecords > 0 ? Math.ceil(totalRecords / pageLength) : 1;
 	            var page = limit(this.props.page, 1, totalPages);
 	            var from = limit((page - 1) * pageLength + 1, 1, totalRecords);
@@ -22276,21 +22341,44 @@
 	                        pageRecordsRenderer({ totalRecords: totalRecords, from: from, to: to })
 	                    ),
 	                    type !== 'minor' && _react2.default.createElement(
-	                        _reactButtons.ButtonDropdown,
+	                        'div',
 	                        {
-	                            dropdownStyle: 'text',
-	                            options: lengthMenu.map(function (length) {
-	                                return {
-	                                    label: length,
-	                                    value: length
-	                                };
-	                            }),
-	                            value: pageLength,
-	                            customValueRenderer: function customValueRenderer(option) {
-	                                return pageLengthRenderer({ pageLength: option.value });
-	                            }
+	                            className: (0, _classnames2.default)(_index2.default.dropdown, _defineProperty({}, _index2.default.open, this.state.shouldOpenDropdownMenu))
 	                        },
-	                        pageLengthRenderer({ pageLength: pageLength })
+	                        _react2.default.createElement(
+	                            'button',
+	                            {
+	                                type: 'button',
+	                                className: (0, _classnames2.default)(_index2.default.btn, _index2.default.dropdownToggle),
+	                                onClick: this.actions.toggleDropdownMenu,
+	                                onBlur: this.actions.closeDropdownMenu
+	                            },
+	                            pageLengthRenderer({ pageLength: pageLength })
+	                        ),
+	                        _react2.default.createElement(
+	                            'ul',
+	                            { className: _index2.default.dropdownMenu },
+	                            pageLengthMenu.map(function (val) {
+	                                return _react2.default.createElement(
+	                                    'li',
+	                                    {
+	                                        key: val,
+	                                        className: (0, _classnames2.default)(_defineProperty({}, _index2.default.selected, pageLength === val)),
+	                                        onMouseDown: function onMouseDown() {
+	                                            _this2.actions.changePage({
+	                                                page: val !== pageLength ? 1 : page,
+	                                                pageLength: val
+	                                            });
+	                                        }
+	                                    },
+	                                    _react2.default.createElement(
+	                                        _reactAnchor2.default,
+	                                        null,
+	                                        val
+	                                    )
+	                                );
+	                            })
+	                        )
 	                    ),
 	                    type !== 'reduced' && type !== 'minor' && _react2.default.createElement(
 	                        'div',
@@ -22317,7 +22405,7 @@
 	                                    _this2.setState({ page: page });
 	                                }
 	
-	                                _this2.actions.handlePageChange({ page: page });
+	                                _this2.actions.changePage({ page: page });
 	                            }
 	                        }),
 	                        '\xA0 / \xA0',
@@ -22345,7 +22433,7 @@
 	                                                _this2.setState({ page: prevPage });
 	                                            }
 	
-	                                            _this2.actions.handlePageChange({ page: prevPage });
+	                                            _this2.actions.changePage({ page: prevPage });
 	                                        }
 	                                    },
 	                                    prevPageRenderer()
@@ -22367,7 +22455,7 @@
 	                                                _this2.setState({ page: nextPage });
 	                                            }
 	
-	                                            _this2.actions.handlePageChange({ page: nextPage });
+	                                            _this2.actions.changePage({ page: nextPage });
 	                                        }
 	                                    },
 	                                    nextPageRenderer()
@@ -22383,9 +22471,9 @@
 	    return TablePagination;
 	}(_react.Component), _class.propTypes = {
 	    type: _react.PropTypes.oneOf(['full', 'reduced', 'minor']),
-	    lengthMenu: _react.PropTypes.array,
 	    page: _react.PropTypes.number,
 	    pageLength: _react.PropTypes.number,
+	    pageLengthMenu: _react.PropTypes.array,
 	    totalRecords: _react.PropTypes.number,
 	    onPageChange: _react.PropTypes.func,
 	    prevPageRenderer: _react.PropTypes.func,
@@ -22394,9 +22482,9 @@
 	    pageLengthRenderer: _react.PropTypes.func
 	}, _class.defaultProps = {
 	    type: 'full',
-	    lengthMenu: [10, 25, 50, 100],
 	    page: 1,
 	    pageLength: 10,
+	    pageLengthMenu: [10, 25, 50, 100],
 	    totalRecords: 0,
 	    onPageChange: function onPageChange() {},
 	    prevPageRenderer: function prevPageRenderer() {
@@ -22419,7 +22507,12 @@
 	    pageLengthRenderer: function pageLengthRenderer(_ref3) {
 	        var pageLength = _ref3.pageLength;
 	
-	        return pageLength + ' per page';
+	        return _react2.default.createElement(
+	            'span',
+	            null,
+	            pageLength + ' per page',
+	            _react2.default.createElement('i', { className: _index2.default.caret })
+	        );
 	    }
 	}, _temp2);
 	exports.default = TablePagination;
@@ -22605,855 +22698,6 @@
 /* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/*! react-buttons v0.4.4 | (c) 2016 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-buttons */
-	module.exports =
-	/******/ (function(modules) { // webpackBootstrap
-	/******/ 	// The module cache
-	/******/ 	var installedModules = {};
-	/******/
-	/******/ 	// The require function
-	/******/ 	function __webpack_require__(moduleId) {
-	/******/
-	/******/ 		// Check if module is in cache
-	/******/ 		if(installedModules[moduleId])
-	/******/ 			return installedModules[moduleId].exports;
-	/******/
-	/******/ 		// Create a new module (and put it into the cache)
-	/******/ 		var module = installedModules[moduleId] = {
-	/******/ 			exports: {},
-	/******/ 			id: moduleId,
-	/******/ 			loaded: false
-	/******/ 		};
-	/******/
-	/******/ 		// Execute the module function
-	/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-	/******/
-	/******/ 		// Flag the module as loaded
-	/******/ 		module.loaded = true;
-	/******/
-	/******/ 		// Return the exports of the module
-	/******/ 		return module.exports;
-	/******/ 	}
-	/******/
-	/******/
-	/******/ 	// expose the modules object (__webpack_modules__)
-	/******/ 	__webpack_require__.m = modules;
-	/******/
-	/******/ 	// expose the module cache
-	/******/ 	__webpack_require__.c = installedModules;
-	/******/
-	/******/ 	// __webpack_public_path__
-	/******/ 	__webpack_require__.p = "";
-	/******/
-	/******/ 	// Load entry module and return exports
-	/******/ 	return __webpack_require__(0);
-	/******/ })
-	/************************************************************************/
-	/******/ ([
-	/* 0 */
-	/***/ function(module, exports, __webpack_require__) {
-	
-		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		  value: true
-		});
-		exports.ButtonDropdown = exports.ButtonToolbar = exports.ButtonGroup = exports.Button = undefined;
-		
-		var _Button2 = __webpack_require__(1);
-		
-		var _Button3 = _interopRequireDefault(_Button2);
-		
-		var _ButtonGroup2 = __webpack_require__(9);
-		
-		var _ButtonGroup3 = _interopRequireDefault(_ButtonGroup2);
-		
-		var _ButtonToolbar2 = __webpack_require__(10);
-		
-		var _ButtonToolbar3 = _interopRequireDefault(_ButtonToolbar2);
-		
-		var _ButtonDropdown2 = __webpack_require__(4);
-		
-		var _ButtonDropdown3 = _interopRequireDefault(_ButtonDropdown2);
-		
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-		
-		exports.Button = _Button3.default;
-		exports.ButtonGroup = _ButtonGroup3.default;
-		exports.ButtonToolbar = _ButtonToolbar3.default;
-		exports.ButtonDropdown = _ButtonDropdown3.default;
-	
-	/***/ },
-	/* 1 */
-	/***/ function(module, exports, __webpack_require__) {
-	
-		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		    value: true
-		});
-		
-		var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-		
-		var _classnames = __webpack_require__(2);
-		
-		var _classnames2 = _interopRequireDefault(_classnames);
-		
-		var _react = __webpack_require__(3);
-		
-		var _react2 = _interopRequireDefault(_react);
-		
-		var _ButtonDropdown = __webpack_require__(4);
-		
-		var _ButtonDropdown2 = _interopRequireDefault(_ButtonDropdown);
-		
-		var _index = __webpack_require__(5);
-		
-		var _index2 = _interopRequireDefault(_index);
-		
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-		
-		function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-		
-		function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-		
-		var Button = function Button(props) {
-		    var className = props.className,
-		        componentClass = props.componentClass,
-		        type = props.type,
-		        btnSize = props.btnSize,
-		        btnStyle = props.btnStyle,
-		        active = props.active,
-		        hover = props.hover,
-		        focus = props.focus,
-		        disabled = props.disabled,
-		        block = props.block,
-		        iconOnly = props.iconOnly,
-		        dropdown = props.dropdown,
-		        others = _objectWithoutProperties(props, ['className', 'componentClass', 'type', 'btnSize', 'btnStyle', 'active', 'hover', 'focus', 'disabled', 'block', 'iconOnly', 'dropdown']);
-		
-		    var Component = componentClass;
-		
-		    if (dropdown) {
-		        return _react2.default.createElement(_ButtonDropdown2.default, props);
-		    }
-		
-		    return _react2.default.createElement(Component, _extends({}, others, {
-		        type: type,
-		        className: (0, _classnames2.default)(className, _index2.default.btn, _defineProperty({}, _index2.default['btn-lg'], btnSize === 'large' || btnSize === 'lg'), _defineProperty({}, _index2.default['btn-md'], btnSize === 'medium' || btnSize === 'md'), _defineProperty({}, _index2.default['btn-sm'], btnSize === 'small' || btnSize === 'sm'), _defineProperty({}, _index2.default['btn-xs'], btnSize === 'extra-small' || btnSize === 'xs'), _defineProperty({}, _index2.default['btn-default'], btnStyle === 'default'), _defineProperty({}, _index2.default['btn-primary'], btnStyle === 'primary'), _defineProperty({}, _index2.default['btn-danger'], btnStyle === 'danger' || btnStyle === 'emphasis'), _defineProperty({}, _index2.default['btn-border'], btnStyle === 'border' || btnStyle === 'flat'), _defineProperty({}, _index2.default['btn-link'], btnStyle === 'link'), _defineProperty({}, _index2.default['btn-block'], block), _defineProperty({}, _index2.default['btn-icon-only'], iconOnly), _defineProperty({}, _index2.default.hover, hover), _defineProperty({}, _index2.default.active, active), _defineProperty({}, _index2.default.focus, focus)),
-		        disabled: !!disabled
-		    }));
-		};
-		
-		Button.propTypes = {
-		    componentClass: _react.PropTypes.oneOfType([_react.PropTypes.element, _react.PropTypes.string]),
-		    type: _react.PropTypes.oneOf(['button', 'reset', 'submit']),
-		    btnSize: _react.PropTypes.oneOf(['lg', 'md', 'sm', 'xs', 'large', 'medium', 'small', 'extra-small']),
-		    btnStyle: _react.PropTypes.oneOf(['default', 'primary', 'danger', 'emphasis', // alias of "danger"
-		    'border', 'flat', // alias of "border"
-		    'link']),
-		    active: _react.PropTypes.bool,
-		    hover: _react.PropTypes.bool,
-		    focus: _react.PropTypes.bool,
-		    disabled: _react.PropTypes.bool,
-		    block: _react.PropTypes.bool,
-		    iconOnly: _react.PropTypes.bool,
-		    dropdown: _react.PropTypes.bool
-		};
-		
-		Button.defaultProps = {
-		    componentClass: 'button',
-		    type: 'button',
-		    btnSize: 'md',
-		    btnStyle: 'default',
-		    active: false,
-		    hover: false,
-		    focus: false,
-		    disabled: false,
-		    block: false,
-		    iconOnly: false,
-		    dropdown: false
-		};
-		
-		exports.default = Button;
-	
-	/***/ },
-	/* 2 */
-	/***/ function(module, exports) {
-	
-		module.exports = __webpack_require__(189);
-	
-	/***/ },
-	/* 3 */
-	/***/ function(module, exports) {
-	
-		module.exports = __webpack_require__(5);
-	
-	/***/ },
-	/* 4 */
-	/***/ function(module, exports, __webpack_require__) {
-	
-		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		    value: true
-		});
-		
-		var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-		
-		var _classnames = __webpack_require__(2);
-		
-		var _classnames2 = _interopRequireDefault(_classnames);
-		
-		var _react = __webpack_require__(3);
-		
-		var _react2 = _interopRequireDefault(_react);
-		
-		var _index = __webpack_require__(5);
-		
-		var _index2 = _interopRequireDefault(_index);
-		
-		var _ButtonGroup = __webpack_require__(9);
-		
-		var _ButtonGroup2 = _interopRequireDefault(_ButtonGroup);
-		
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-		
-		function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-		
-		function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-		
-		function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-		
-		function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-		
-		var ButtonDropdown = function (_Component) {
-		    _inherits(ButtonDropdown, _Component);
-		
-		    function ButtonDropdown() {
-		        var _ref;
-		
-		        var _temp, _this, _ret;
-		
-		        _classCallCheck(this, ButtonDropdown);
-		
-		        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-		            args[_key] = arguments[_key];
-		        }
-		
-		        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = ButtonDropdown.__proto__ || Object.getPrototypeOf(ButtonDropdown)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.getDefaultState(), _this.actions = {
-		            dropdown: {
-		                handleKeyDown: function handleKeyDown(e) {
-		                    if (!_this.props.dropdown || _this.props.disabled) {
-		                        return;
-		                    }
-		                    var isOpen = _this.state.isOpen;
-		
-		                    switch (e.keyCode) {
-		                        case 13:
-		                            // enter
-		                            if (!isOpen) {
-		                                return;
-		                            }
-		                            _this.selectValue(_this.state.focusedOption);
-		                            break;
-		                        case 27:
-		                            // escape
-		                            if (isOpen) {
-		                                _this.closeMenu();
-		                            }
-		                            break;
-		                        case 38:
-		                            // up
-		                            _this.focusPreviousOption();
-		                            break;
-		                        case 40:
-		                            // down
-		                            _this.focusNextOption();
-		                            break;
-		                        default:
-		                            return;
-		                    }
-		                    e.stopPropagation();
-		                    e.preventDefault();
-		                    _this.focusButton();
-		                },
-		                handleMouseDown: function handleMouseDown(e) {
-		                    if (!_this.props.dropdown || _this.props.disabled) {
-		                        return;
-		                    }
-		                    _this.setState({
-		                        isOpen: !_this.state.isOpen
-		                    }, function () {
-		                        if (_this.state.isOpen) {
-		                            _this.focusAdjacentOption();
-		                        }
-		                        _this.focusButton();
-		                    });
-		                    // prevent default event handlers
-		                    e.stopPropagation();
-		                    e.preventDefault();
-		                },
-		                handleBlur: function handleBlur(e) {
-		                    if (!_this.props.dropdown || _this.props.disabled) {
-		                        return;
-		                    }
-		                    _this.closeMenu();
-		                }
-		            },
-		            menu: {
-		                handleOptionChanged: function handleOptionChanged(e) {
-		                    var el = e.currentTarget;
-		                    var index = el.dataset.key;
-		                    var selectedOption = _this.state.options[index];
-		                    _this.selectValue(selectedOption);
-		                    e.stopPropagation();
-		                    e.preventDefault();
-		                },
-		                handleMouseEnter: function handleMouseEnter(e) {
-		                    _this.focusOption(e);
-		                },
-		                handleMouseMove: function handleMouseMove(e) {
-		                    _this.focusOption(e);
-		                }
-		            }
-		        }, _temp), _possibleConstructorReturn(_this, _ret);
-		    }
-		
-		    _createClass(ButtonDropdown, [{
-		        key: 'componentDidMount',
-		        value: function componentDidMount() {
-		            var _props = this.props,
-		                dropdown = _props.dropdown,
-		                fixedWidth = _props.fixedWidth,
-		                dropdownStyle = _props.dropdownStyle;
-		
-		
-		            if (dropdown && fixedWidth) {
-		                var dropdownWidth = this.btnDropdown.parentElement.offsetWidth;
-		                var menuWidth = this.menu.offsetWidth;
-		                var caretWidth = dropdownStyle === 'split' ? this.btnDropdown.offsetWidth : this.caret.offsetWidth;
-		                var newWidth = 0;
-		
-		                menuWidth += caretWidth;
-		                if (menuWidth > dropdownWidth) {
-		                    newWidth = menuWidth;
-		                } else if (dropdownWidth > menuWidth) {
-		                    newWidth = dropdownWidth;
-		                }
-		                if (newWidth > 0) {
-		                    this.resize({
-		                        width: newWidth
-		                    });
-		                }
-		                this.setState({
-		                    isReady: true
-		                });
-		            }
-		        }
-		    }, {
-		        key: 'resize',
-		        value: function resize(size) {
-		            if (!size) {
-		                return;
-		            }
-		            this.btnDropdown.parentElement.style.width = size.width + 'px';
-		            this.menu.style.width = size.width + 'px';
-		        }
-		    }, {
-		        key: 'getDefaultState',
-		        value: function getDefaultState() {
-		            var _props2 = this.props,
-		                value = _props2.value,
-		                dropdown = _props2.dropdown,
-		                options = _props2.options,
-		                fixedWidth = _props2.fixedWidth;
-		
-		            var focusedOption = void 0;
-		            var initItems = void 0;
-		            if (dropdown && Array.isArray(options)) {
-		                (function () {
-		                    var isChecked = void 0;
-		                    // Get default selected option(s) for renderValue function
-		                    initItems = options.map(function (option, i) {
-		                        isChecked = option.value === value;
-		                        var tempObj = {
-		                            value: option.value,
-		                            label: option.label,
-		                            id: 'option_item_' + i,
-		                            checked: isChecked
-		                        };
-		                        return tempObj;
-		                    });
-		                    focusedOption = initItems.find(function (item) {
-		                        return item.checked === true;
-		                    });
-		                })();
-		            }
-		
-		            return {
-		                isOpen: false,
-		                focusedOption: focusedOption,
-		                options: initItems,
-		                isReady: !fixedWidth // 'isReady' will affect initialization display of menu
-		            };
-		        }
-		    }, {
-		        key: 'closeMenu',
-		        value: function closeMenu() {
-		            this.setState({
-		                isOpen: false
-		            });
-		        }
-		    }, {
-		        key: 'focusButton',
-		        value: function focusButton() {
-		            this.btnDropdown.focus();
-		        }
-		    }, {
-		        key: 'focusOption',
-		        value: function focusOption(event) {
-		            var index = event.currentTarget.dataset.key;
-		            var option = this.props.options[index];
-		            this.setState({
-		                focusedOption: option
-		            });
-		            event.stopPropagation();
-		            event.preventDefault();
-		        }
-		    }, {
-		        key: 'focusNextOption',
-		        value: function focusNextOption() {
-		            this.focusAdjacentOption('next');
-		        }
-		    }, {
-		        key: 'focusPreviousOption',
-		        value: function focusPreviousOption() {
-		            this.focusAdjacentOption('previous');
-		        }
-		    }, {
-		        key: 'focusAdjacentOption',
-		        value: function focusAdjacentOption(dir) {
-		            var options = this.state.options;
-		            var _state = this.state,
-		                focusedOption = _state.focusedOption,
-		                isOpen = _state.isOpen;
-		
-		            if (!isOpen) {
-		                this.setState({
-		                    isOpen: true,
-		                    focusedOption: focusedOption || options[dir === 'next' ? 0 : options.length - 1]
-		                });
-		                return;
-		            }
-		            if (!Array.isArray(options)) {
-		                return;
-		            }
-		            var focusedIndex = -1;
-		            focusedIndex = options.indexOf(focusedOption);
-		
-		            if (dir === 'next' && focusedIndex !== -1) {
-		                focusedIndex = (focusedIndex + 1) % options.length;
-		            } else if (dir === 'previous') {
-		                if (focusedIndex > 0) {
-		                    focusedIndex--;
-		                } else {
-		                    focusedIndex = options.length - 1;
-		                }
-		            }
-		
-		            if (focusedIndex === -1) {
-		                focusedIndex = 0;
-		            }
-		            this.setState({
-		                focusedOption: options[focusedIndex]
-		            });
-		        }
-		    }, {
-		        key: 'getOptionLabel',
-		        value: function getOptionLabel(option) {
-		            return option.label;
-		        }
-		    }, {
-		        key: 'getSelectedOptions',
-		        value: function getSelectedOptions() {
-		            var options = this.state.options;
-		
-		            var selectedOptions = [];
-		            if (Array.isArray(options)) {
-		                selectedOptions = options.filter(function (item) {
-		                    return item.checked === true;
-		                });
-		            }
-		            return selectedOptions;
-		        }
-		    }, {
-		        key: 'selectValue',
-		        value: function selectValue(item) {
-		            var _this2 = this;
-		
-		            this.focusButton();
-		            this.setState({
-		                isOpen: false
-		            }, function () {
-		                _this2.updateValue(item);
-		            });
-		        }
-		    }, {
-		        key: 'updateValue',
-		        value: function updateValue(option) {
-		            var newOptions = this.state.options;
-		            var prevSelectedOption = newOptions.find(function (item) {
-		                return item.checked === true;
-		            });
-		            if (prevSelectedOption) {
-		                prevSelectedOption.checked = false;
-		            }
-		            var selectedIndex = newOptions.findIndex(function (item) {
-		                return item.value === option.value;
-		            });
-		            newOptions[selectedIndex].checked = true;
-		            this.setValue(newOptions);
-		        }
-		    }, {
-		        key: 'setValue',
-		        value: function setValue(newOptions) {
-		            var _this3 = this;
-		
-		            this.setState({
-		                options: newOptions
-		            }, function () {
-		                var value = _this3.getSelectedOptions();
-		                var returnValue = value;
-		                if (value.length > 0) {
-		                    returnValue = value[0];
-		                }
-		                _this3.props.onChange(returnValue);
-		            });
-		        }
-		    }, {
-		        key: 'renderMenuOptions',
-		        value: function renderMenuOptions() {
-		            var _this4 = this;
-		
-		            var customOptionRenderer = this.props.customOptionRenderer;
-		            var _state2 = this.state,
-		                focusedOption = _state2.focusedOption,
-		                options = _state2.options;
-		            var _actions$menu = this.actions.menu,
-		                handleOptionChanged = _actions$menu.handleOptionChanged,
-		                handleMouseEnter = _actions$menu.handleMouseEnter,
-		                handleMouseMove = _actions$menu.handleMouseMove;
-		
-		            var defaultMenuOption = function defaultMenuOption(item) {
-		                return _this4.getOptionLabel(item);
-		            };
-		            var renderLabel = customOptionRenderer || defaultMenuOption;
-		            return options.map(function (item, key) {
-		                return _react2.default.createElement(
-		                    'li',
-		                    { key: 'option_' + key },
-		                    _react2.default.createElement(
-		                        'a',
-		                        {
-		                            className: (0, _classnames2.default)(_defineProperty({}, _index2.default.focus, item === focusedOption)),
-		                            'data-key': key,
-		                            onMouseDown: handleOptionChanged,
-		                            onMouseEnter: handleMouseEnter,
-		                            onMouseMove: handleMouseMove
-		                        },
-		                        renderLabel(item)
-		                    )
-		                );
-		            });
-		        }
-		    }, {
-		        key: 'renderMenu',
-		        value: function renderMenu() {
-		            var _this5 = this;
-		
-		            if (!this.props.dropdown || this.props.disabled) {
-		                return null;
-		            }
-		            var _state3 = this.state,
-		                isReady = _state3.isReady,
-		                options = _state3.options;
-		
-		            if (options && options.length) {
-		                return _react2.default.createElement(
-		                    'ul',
-		                    {
-		                        ref: function ref(node) {
-		                            _this5.menu = node;
-		                        },
-		                        className: (0, _classnames2.default)(_index2.default['dropdown-menu'], _defineProperty({}, _index2.default.ready, isReady))
-		                    },
-		                    this.renderMenuOptions()
-		                );
-		            } else if (this.props.noOptionsText) {
-		                return _react2.default.createElement(
-		                    'div',
-		                    {
-		                        ref: function ref(node) {
-		                            _this5.menu = node;
-		                        },
-		                        className: (0, _classnames2.default)(_index2.default['dropdown-nooptions'], _defineProperty({}, _index2.default.ready, isReady))
-		                    },
-		                    this.props.noOptionsText
-		                );
-		            } else {
-		                return null;
-		            }
-		        }
-		    }, {
-		        key: 'renderValue',
-		        value: function renderValue() {
-		            var _props3 = this.props,
-		                placeholder = _props3.placeholder,
-		                children = _props3.children,
-		                customValueRenderer = _props3.customValueRenderer;
-		
-		            var selectedOption = this.getSelectedOptions();
-		            var el = children;
-		            if (selectedOption.length === 0) {
-		                if (placeholder) {
-		                    el = _react2.default.createElement(
-		                        'span',
-		                        null,
-		                        placeholder
-		                    );
-		                }
-		            } else {
-		                var renderLabel = customValueRenderer || this.getOptionLabel;
-		                el = renderLabel(selectedOption[0]);
-		            }
-		
-		            return _react2.default.createElement(
-		                'div',
-		                { className: _index2.default['select-value-zone'] },
-		                el
-		            );
-		        }
-		    }, {
-		        key: 'renderArrow',
-		        value: function renderArrow() {
-		            var _this6 = this;
-		
-		            return _react2.default.createElement(
-		                'div',
-		                {
-		                    ref: function ref(node) {
-		                        _this6.caret = node;
-		                    },
-		                    className: (0, _classnames2.default)(_index2.default['select-arrow-zone'])
-		                },
-		                _react2.default.createElement('span', { className: _index2.default.caret })
-		            );
-		        }
-		    }, {
-		        key: 'render',
-		        value: function render() {
-		            var _this7 = this;
-		
-		            var _props4 = this.props,
-		                className = _props4.className,
-		                hover = _props4.hover,
-		                active = _props4.active,
-		                focus = _props4.focus,
-		                disabled = _props4.disabled,
-		                btnSize = _props4.btnSize,
-		                dropdownStyle = _props4.dropdownStyle;
-		            var _actions$dropdown = this.actions.dropdown,
-		                handleKeyDown = _actions$dropdown.handleKeyDown,
-		                handleMouseDown = _actions$dropdown.handleMouseDown,
-		                handleBlur = _actions$dropdown.handleBlur;
-		            var isOpen = this.state.isOpen;
-		
-		            var isSplitLayout = dropdownStyle === 'split';
-		
-		            return _react2.default.createElement(
-		                _ButtonGroup2.default,
-		                {
-		                    btnSize: btnSize,
-		                    className: (0, _classnames2.default)(className, _index2.default.dropdown, _defineProperty({}, _index2.default['dropdown-single'], dropdownStyle === 'single'), _defineProperty({}, _index2.default['dropdown-split'], isSplitLayout), _defineProperty({}, _index2.default['dropdown-text'], dropdownStyle === 'text'), _defineProperty({}, _index2.default.dropup, isOpen))
-		                },
-		                isSplitLayout && _react2.default.createElement(
-		                    'button',
-		                    {
-		                        type: 'button',
-		                        className: (0, _classnames2.default)(_index2.default.btn, _index2.default['btn-border']),
-		                        disabled: !!disabled
-		                    },
-		                    this.renderValue()
-		                ),
-		                _react2.default.createElement(
-		                    'button',
-		                    {
-		                        ref: function ref(node) {
-		                            _this7.btnDropdown = node;
-		                        },
-		                        type: 'button',
-		                        className: (0, _classnames2.default)(_index2.default.btn, _index2.default['dropdown-toggle'], _defineProperty({}, _index2.default['btn-border'], dropdownStyle === 'single' || isSplitLayout), _defineProperty({}, _index2.default['btn-link'], dropdownStyle === 'text'), _defineProperty({}, _index2.default.hover, hover || isOpen), _defineProperty({}, _index2.default.active, active), _defineProperty({}, _index2.default.focus, focus)),
-		                        disabled: !!disabled,
-		                        onKeyDown: handleKeyDown,
-		                        onMouseDown: handleMouseDown,
-		                        onBlur: handleBlur
-		                    },
-		                    !isSplitLayout && this.renderValue(),
-		                    this.renderArrow()
-		                ),
-		                this.renderMenu()
-		            );
-		        }
-		    }]);
-		
-		    return ButtonDropdown;
-		}(_react.Component);
-		
-		ButtonDropdown.propTypes = {
-		    active: _react.PropTypes.bool,
-		    btnSize: _react.PropTypes.oneOf(['lg', 'md', 'sm', 'xs', 'large', 'medium', 'small', 'extra-small']),
-		    disabled: _react.PropTypes.bool,
-		    focus: _react.PropTypes.bool,
-		    hover: _react.PropTypes.bool,
-		    dropdown: _react.PropTypes.bool,
-		    dropdownStyle: _react.PropTypes.oneOf(['single', 'split', 'text']),
-		    value: _react.PropTypes.any, // initial field value
-		    options: _react.PropTypes.array, // array of options
-		    placeholder: _react.PropTypes.string, // field placeholder, displayed when there's no value
-		    noOptionsText: _react.PropTypes.oneOfType([// text displayed when there are no any options
-		    _react2.default.PropTypes.string, _react2.default.PropTypes.noe]),
-		    fixedWidth: _react.PropTypes.bool, // the width of dropdown and menu are consistent
-		    customValueRenderer: _react2.default.PropTypes.func, // customValueRenderer: function (option) {}
-		    customOptionRenderer: _react2.default.PropTypes.func, // renders a custom menu with options
-		    onChange: _react.PropTypes.func // onChange handler: function (newValue) {}
-		};
-		ButtonDropdown.defaultProps = {
-		    hover: false,
-		    active: false,
-		    focus: false,
-		    disabled: false,
-		    block: false,
-		    dropdown: true,
-		    iconOnly: false,
-		    btnSize: 'md',
-		    btnStyle: 'default',
-		    dropdownStyle: 'single',
-		    fixedWidth: false,
-		    noOptionsText: 'No options found'
-		};
-		
-		exports.default = ButtonDropdown;
-	
-	/***/ },
-	/* 5 */
-	/***/ function(module, exports) {
-	
-		// removed by extract-text-webpack-plugin
-		module.exports = {"btn":"buttons---btn---2jZHN","active":"buttons---active---2-a32","focus":"buttons---focus---1kVJZ","hover":"buttons---hover---42FF2","disabled":"buttons---disabled---eCY9b","btn-icon-only":"buttons---btn-icon-only---NYhkW","btnIconOnly":"buttons---btn-icon-only---NYhkW","btn-lg":"buttons---btn-lg---2xtUV","btnLg":"buttons---btn-lg---2xtUV","btn-md":"buttons---btn-md---HRR_F","btnMd":"buttons---btn-md---HRR_F","btn-sm":"buttons---btn-sm---3cNnY","btnSm":"buttons---btn-sm---3cNnY","btn-xs":"buttons---btn-xs---2eEDQ","btnXs":"buttons---btn-xs---2eEDQ","btn-default":"buttons---btn-default---1wWXD","btnDefault":"buttons---btn-default---1wWXD","btn-primary":"buttons---btn-primary---Wp1wb","btnPrimary":"buttons---btn-primary---Wp1wb","btn-danger":"buttons---btn-danger---1UUqU","btnDanger":"buttons---btn-danger---1UUqU","btn-border":"buttons---btn-border---1O58b","btnBorder":"buttons---btn-border---1O58b","btn-link":"buttons---btn-link---1xwS4","btnLink":"buttons---btn-link---1xwS4","btn-group-lg":"buttons---btn-group-lg---3C8An","btnGroupLg":"buttons---btn-group-lg---3C8An","btn-group-md":"buttons---btn-group-md---3FQVP","btnGroupMd":"buttons---btn-group-md---3FQVP","btn-group-sm":"buttons---btn-group-sm---3_QLf","btnGroupSm":"buttons---btn-group-sm---3_QLf","btn-group-xs":"buttons---btn-group-xs---1c4pb","btnGroupXs":"buttons---btn-group-xs---1c4pb","btn-block":"buttons---btn-block---1nSNV","btnBlock":"buttons---btn-block---1nSNV","btn-group":"buttons---btn-group---1jaDo","btnGroup":"buttons---btn-group---1jaDo","btn-group-vertical":"buttons---btn-group-vertical---3Lm1e","btnGroupVertical":"buttons---btn-group-vertical---3Lm1e","btn-toolbar":"buttons---btn-toolbar---2-GfJ","btnToolbar":"buttons---btn-toolbar---2-GfJ","input-group":"buttons---input-group---1T18I","inputGroup":"buttons---input-group---1T18I","dropdown-toggle":"buttons---dropdown-toggle---vMtjL","dropdownToggle":"buttons---dropdown-toggle---vMtjL","open":"buttons---open---1ju75","btn-group-justified":"buttons---btn-group-justified---3qB9u","btnGroupJustified":"buttons---btn-group-justified---3qB9u","dropdown-menu":"buttons---dropdown-menu---1fkH0","dropdownMenu":"buttons---dropdown-menu---1fkH0","dropdown":"buttons---dropdown---1yvIZ","select-value-zone":"buttons---select-value-zone---1WDhx","selectValueZone":"buttons---select-value-zone---1WDhx","select-arrow-zone":"buttons---select-arrow-zone---2AKJW","selectArrowZone":"buttons---select-arrow-zone---2AKJW","caret":"buttons---caret---3CkEt","dropdown-nooptions":"buttons---dropdown-nooptions---Z3N2g","dropdownNooptions":"buttons---dropdown-nooptions---Z3N2g","ready":"buttons---ready---m-e-B","dropup":"buttons---dropup---30DnN","dropdown-split":"buttons---dropdown-split---3C0pZ","dropdownSplit":"buttons---dropdown-split---3C0pZ"};
-	
-	/***/ },
-	/* 6 */,
-	/* 7 */,
-	/* 8 */,
-	/* 9 */
-	/***/ function(module, exports, __webpack_require__) {
-	
-		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		    value: true
-		});
-		
-		var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-		
-		var _classnames = __webpack_require__(2);
-		
-		var _classnames2 = _interopRequireDefault(_classnames);
-		
-		var _react = __webpack_require__(3);
-		
-		var _react2 = _interopRequireDefault(_react);
-		
-		var _index = __webpack_require__(5);
-		
-		var _index2 = _interopRequireDefault(_index);
-		
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-		
-		function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-		
-		function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-		
-		var ButtonGroup = function ButtonGroup(_ref) {
-		    var className = _ref.className,
-		        btnSize = _ref.btnSize,
-		        vertical = _ref.vertical,
-		        props = _objectWithoutProperties(_ref, ['className', 'btnSize', 'vertical']);
-		
-		    return _react2.default.createElement('div', _extends({}, props, {
-		        className: (0, _classnames2.default)(className, _index2.default['btn-group'], _defineProperty({}, _index2.default['btn-group-lg'], btnSize === 'large' || btnSize === 'lg'), _defineProperty({}, _index2.default['btn-group-md'], btnSize === 'medium' || btnSize === 'md'), _defineProperty({}, _index2.default['btn-group-sm'], btnSize === 'small' || btnSize === 'sm'), _defineProperty({}, _index2.default['btn-group-xs'], btnSize === 'extra-small' || btnSize === 'xs'), _defineProperty({}, _index2.default['btn-group-vertical'], vertical))
-		    }));
-		};
-		
-		ButtonGroup.propTypes = {
-		    btnSize: _react.PropTypes.oneOf(['lg', 'md', 'sm', 'xs', 'large', 'medium', 'small', 'extra-small']),
-		    vertical: _react.PropTypes.bool
-		};
-		ButtonGroup.defaultProps = {
-		    btnSize: 'md', // Defaults to medium size
-		    vertical: false
-		};
-		
-		exports.default = ButtonGroup;
-	
-	/***/ },
-	/* 10 */
-	/***/ function(module, exports, __webpack_require__) {
-	
-		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		    value: true
-		});
-		
-		var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-		
-		var _classnames = __webpack_require__(2);
-		
-		var _classnames2 = _interopRequireDefault(_classnames);
-		
-		var _react = __webpack_require__(3);
-		
-		var _react2 = _interopRequireDefault(_react);
-		
-		var _index = __webpack_require__(5);
-		
-		var _index2 = _interopRequireDefault(_index);
-		
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-		
-		function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-		
-		var ButtonToolbar = function ButtonToolbar(_ref) {
-		    var className = _ref.className,
-		        props = _objectWithoutProperties(_ref, ['className']);
-		
-		    return _react2.default.createElement('div', _extends({}, props, {
-		        className: (0, _classnames2.default)(className, _index2.default['btn-toolbar'])
-		    }));
-		};
-		
-		exports.default = ButtonToolbar;
-	
-	/***/ }
-	/******/ ]);
-	//# sourceMappingURL=index.js.map
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 	  Copyright (c) 2016 Jed Watson.
 	  Licensed under the MIT License (MIT), see
@@ -23505,7 +22749,7 @@
 
 
 /***/ },
-/* 190 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23639,13 +22883,13 @@
 	module.exports = AutosizeInput;
 
 /***/ },
-/* 191 */
+/* 190 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(192);
+	var content = __webpack_require__(191);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(4)(content, {});
@@ -23665,7 +22909,7 @@
 	}
 
 /***/ },
-/* 192 */
+/* 191 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(3)();
@@ -23673,12 +22917,10 @@
 	
 	
 	// module
-	exports.push([module.id, "._3JEHc {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  vertical-align: middle;\n  border-top: 4px dashed #666;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n}\n._2mECg {\n  display: inline-block;\n  padding-left: 0;\n  border-radius: 3px;\n  margin: 0;\n}\n._2mECg > li {\n  display: inline;\n}\n._2mECg > li > a,\n._2mECg > li > span {\n  position: relative;\n  float: left;\n  padding: 5px 0;\n  text-decoration: none;\n  color: #222;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  margin-left: -1px;\n  width: 32px;\n  text-align: center;\n}\n._2mECg > li:first-child > a,\n._2mECg > li:first-child > span {\n  margin-left: 0;\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n._2mECg > li:last-child > a,\n._2mECg > li:last-child > span {\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n._2mECg > li > a._6JjJl,\n._2mECg > li > span._6JjJl {\n  color: #666;\n}\n._2mECg > li > a,\n._2mECg > li > span {\n  cursor: pointer;\n}\n._2mECg > li > a:hover,\n._2mECg > li > span:hover,\n._2mECg > li > a:focus,\n._2mECg > li > span:focus {\n  z-index: 2;\n  color: #222;\n  background-color: #f4f4f4;\n  border-color: #bbb;\n}\n._2mECg > li > a:active,\n._2mECg > ._3WkHr > a,\n._2mECg > ._3WkHr > span,\n._2mECg > li > a:active:hover,\n._2mECg > ._3WkHr > a:hover,\n._2mECg > ._3WkHr > span:hover,\n._2mECg > li > a:active:focus,\n._2mECg > ._3WkHr > a:focus,\n._2mECg > ._3WkHr > span:focus {\n  z-index: 3;\n  color: #222;\n  background-color: #eee;\n  border-color: #bbb;\n  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n  box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n  background-image: none;\n}\n._2mECg > ._3WkHr > a,\n._2mECg > ._3WkHr > span {\n  cursor: default;\n}\n._2mECg > ._3l4Hc > span,\n._2mECg > ._3l4Hc > span:hover,\n._2mECg > ._3l4Hc > span:focus,\n._2mECg > ._3l4Hc > a,\n._2mECg > ._3l4Hc > a:hover,\n._2mECg > ._3l4Hc > a:focus {\n  color: #222;\n  background-color: #fff;\n  border-color: #ccc;\n  cursor: not-allowed;\n  opacity: 0.4;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)\";\n  filter: alpha(opacity=40);\n}\n._1MQ2P._15WIg {\n  float: right;\n}\n._1MQ2P ._305mq {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n._1MQ2P ._305mq > div {\n  margin-top: 8px;\n  margin-bottom: 8px;\n  margin-left: 8px;\n  margin-right: 8px;\n  float: left;\n}\n._1MQ2P ._305mq ._2mECg {\n  vertical-align: top;\n}\n._1MQ2P ._305mq ._3TmiQ {\n  color: #666;\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n._1MQ2P ._305mq ._3TmiQ + .Wq_VE {\n  border-left: 1px solid #ddd;\n}\n._1MQ2P ._305mq .Wq_VE {\n  padding-left: 16px;\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9 {\n  border-left: 0;\n  border-right: 0;\n  color: #666;\n  text-decoration: none;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9:hover {\n  color: #0096cc;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9 ._3JEHc {\n  margin-left: 8px;\n}\n._1MQ2P ._305mq ._1msGL {\n  color: #666;\n}\n._1MQ2P ._305mq ._1msGL input {\n  vertical-align: baseline;\n  margin: 0;\n  min-width: 24px;\n  padding: 5px 4px;\n  text-align: center;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n}\n", ""]);
+	exports.push([module.id, "._2mECg {\n  display: inline-block;\n  padding-left: 0;\n  border-radius: 3px;\n  margin: 0;\n}\n._2mECg > li {\n  display: inline;\n}\n._2mECg > li > a,\n._2mECg > li > span {\n  position: relative;\n  float: left;\n  padding: 5px 0;\n  text-decoration: none;\n  color: #222;\n  background-color: #fff;\n  border: 1px solid #ccc;\n  margin-left: -1px;\n  width: 32px;\n  text-align: center;\n}\n._2mECg > li:first-child > a,\n._2mECg > li:first-child > span {\n  margin-left: 0;\n  border-top-left-radius: 3px;\n  border-bottom-left-radius: 3px;\n}\n._2mECg > li:last-child > a,\n._2mECg > li:last-child > span {\n  border-top-right-radius: 3px;\n  border-bottom-right-radius: 3px;\n}\n._2mECg > li > a._6JjJl,\n._2mECg > li > span._6JjJl {\n  color: #666;\n}\n._2mECg > li > a,\n._2mECg > li > span {\n  cursor: pointer;\n}\n._2mECg > li > a:hover,\n._2mECg > li > span:hover,\n._2mECg > li > a:focus,\n._2mECg > li > span:focus {\n  z-index: 2;\n  color: #222;\n  background-color: #f4f4f4;\n  border-color: #bbb;\n}\n._2mECg > li > a:active,\n._2mECg > ._3WkHr > a,\n._2mECg > ._3WkHr > span,\n._2mECg > li > a:active:hover,\n._2mECg > ._3WkHr > a:hover,\n._2mECg > ._3WkHr > span:hover,\n._2mECg > li > a:active:focus,\n._2mECg > ._3WkHr > a:focus,\n._2mECg > ._3WkHr > span:focus {\n  z-index: 3;\n  color: #222;\n  background-color: #eee;\n  border-color: #bbb;\n  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n  box-shadow: 0 1px 2px rgba(0,0,0,0.1) inset;\n  background-image: none;\n}\n._2mECg > ._3WkHr > a,\n._2mECg > ._3WkHr > span {\n  cursor: default;\n}\n._2mECg > ._3l4Hc > span,\n._2mECg > ._3l4Hc > span:hover,\n._2mECg > ._3l4Hc > span:focus,\n._2mECg > ._3l4Hc > a,\n._2mECg > ._3l4Hc > a:hover,\n._2mECg > ._3l4Hc > a:focus {\n  color: #222;\n  background-color: #fff;\n  border-color: #ccc;\n  cursor: not-allowed;\n  opacity: 0.4;\n  -ms-filter: \"progid:DXImageTransform.Microsoft.Alpha(Opacity=40)\";\n  filter: alpha(opacity=40);\n}\n._1MQ2P._15WIg {\n  float: right;\n}\n._1MQ2P ._305mq {\n  margin-left: 8px;\n  margin-right: 8px;\n}\n._1MQ2P ._305mq > div {\n  margin-top: 8px;\n  margin-bottom: 8px;\n  margin-left: 8px;\n  margin-right: 8px;\n  float: left;\n}\n._1MQ2P ._305mq ._2mECg {\n  vertical-align: top;\n}\n._1MQ2P ._305mq ._3TmiQ {\n  color: #666;\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n._1MQ2P ._305mq ._3TmiQ + .Wq_VE {\n  border-left: 1px solid #ddd;\n}\n._1MQ2P ._305mq .Wq_VE {\n  padding-left: 16px;\n  margin-top: 14px;\n  margin-bottom: 14px;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9 {\n  background-color: transparent;\n  border: 0;\n  border-color: transparent;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  color: #666;\n  line-height: 18px;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: left;\n  text-decoration: none;\n  outline: none;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9 ._3JEHc {\n  display: inline-block;\n  width: 0;\n  height: 0;\n  vertical-align: middle;\n  border-top: 4px dashed #666;\n  border-right: 4px solid transparent;\n  border-left: 4px solid transparent;\n  margin-left: 8px;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9:hover {\n  color: #0096cc;\n}\n._1MQ2P ._305mq .Wq_VE ._1joF9:hover ._3JEHc {\n  border-top-color: #0096cc;\n}\n._1MQ2P ._305mq .Wq_VE ._2R-2v {\n  top: 27px;\n  left: 16px;\n}\n._1MQ2P ._305mq ._1msGL {\n  color: #666;\n}\n._1MQ2P ._305mq ._1msGL input {\n  vertical-align: baseline;\n  margin: 0;\n  min-width: 24px;\n  padding: 5px 4px;\n  text-align: center;\n  border: 1px solid #ccc;\n  border-radius: 3px;\n}\n.Wq_VE {\n  position: relative;\n}\n._2R-2v {\n  position: absolute;\n  top: 100%;\n  left: 0;\n  z-index: 1000;\n  display: none;\n  float: left;\n  min-width: 0;\n  padding: 8px 0;\n  margin: 0;\n  font-size: 13px;\n  text-align: left;\n  list-style: none;\n  background-color: #fff;\n  -webkit-background-clip: padding;\n  -moz-background-clip: padding;\n  background-clip: padding-box;\n  border: 1px solid #bbb;\n  border-radius: 0;\n  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n  box-shadow: 0 2px 6px rgba(0,0,0,0.2);\n}\n._2SG_5 > ._2R-2v {\n  display: block;\n}\n._2R-2v > li > a {\n  display: block;\n  padding: 4px 32px 4px 40px;\n  clear: both;\n  font-weight: normal;\n  line-height: 20px;\n  color: #222;\n  text-decoration: none;\n  white-space: nowrap;\n}\n._2R-2v > li > a:hover,\n._2R-2v > li > a:focus {\n  color: #222;\n  text-decoration: none;\n  background-color: #eee;\n}\n._2R-2v > li._91VwC a:before {\n  display: inline-block;\n  width: 16px;\n  height: 20px;\n  margin: 0 8px 0 -24px;\n  vertical-align: top;\n  content: \"\";\n  background-image: url(" + __webpack_require__(192) + ");\n  background-repeat: no-repeat;\n  background-position: 0 2px;\n}\n", ""]);
 	
 	// exports
 	exports.locals = {
-		"caret": "_3JEHc",
-		"caret": "_3JEHc",
 		"pagination": "_2mECg",
 		"pagination": "_2mECg",
 		"fa": "_6JjJl",
@@ -23699,10 +22941,24 @@
 		"dropdown": "Wq_VE",
 		"btn": "_1joF9",
 		"btn": "_1joF9",
+		"caret": "_3JEHc",
+		"caret": "_3JEHc",
+		"dropdown-menu": "_2R-2v",
+		"dropdownMenu": "_2R-2v",
 		"pagination-input": "_1msGL",
-		"paginationInput": "_1msGL"
+		"paginationInput": "_1msGL",
+		"open": "_2SG_5",
+		"open": "_2SG_5",
+		"selected": "_91VwC",
+		"selected": "_91VwC"
 	};
+
+/***/ },
+/* 192 */
+/***/ function(module, exports) {
+
+	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iMTZweCIgaGVpZ2h0PSIxNnB4IiB2aWV3Qm94PSIwIDAgMTYgMTYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDE2IDE2OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KPCFbQ0RBVEFbDQoJLnN0MHtmaWxsLXJ1bGU6ZXZlbm9kZDtjbGlwLXJ1bGU6ZXZlbm9kZDtmaWxsOiMwMDk2Q0M7fQ0KXV0+DQo8L3N0eWxlPg0KPGcgaWQ9Imljb25TZWxlY3RDaGVjayI+DQoJPGc+DQoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMi43LDQuMWMtMC40LTAuNC0xLTAuNC0xLjQsMGwtNS4yLDYuMUw0LjcsNy4zQzQuMyw3LDMuNyw3LDMuMyw3LjNzLTAuNCwxLDAsMS40TDUsMTIuMg0KCQkJYzAsMC4xLDAuMSwwLjIsMC4yLDAuM2wwLjEsMC4yYzAuNCwwLjQsMSwwLjQsMS40LDBjMCwwLDAtMC4xLDAuMS0wLjFsNi03LjFDMTMuMSw1LjEsMTMuMSw0LjUsMTIuNyw0LjF6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo="
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=bundle.js.map?740ee672e0fd840e6b29
+//# sourceMappingURL=bundle.js.map?b5af8b8fa614a8884b02
