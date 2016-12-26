@@ -73,9 +73,12 @@ class TablePagination extends Component {
                 page = this.props.page,
                 pageLength = this.props.pageLength
             } = { ...options };
-
-            const currentPage = (page > Math.ceil(totalRecords / pageLength)) ? Math.ceil(totalRecords / pageLength) : page;
-            this.props.onPageChange({ page: currentPage, pageLength });
+            const pageMin = 1;
+            const pageMax = Math.max(Math.ceil(totalRecords / pageLength), 1);
+            this.props.onPageChange({
+                page: limit(page, pageMin, pageMax),
+                pageLength
+            });
         }
     };
 
