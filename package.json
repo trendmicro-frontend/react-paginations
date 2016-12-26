@@ -40,7 +40,9 @@
   "homepage": "https://github.com/trendmicro-frontend/react-paginations",
   "keywords": [
     "react",
-    "react-paginations"
+    "react-paginations",
+    "table",
+    "pagination"
   ],
   "peerDependencies": {
     "react": "^0.14.0 || ^15.0.0"

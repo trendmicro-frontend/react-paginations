@@ -12,7 +12,9 @@
   "snapshots": [],
   "keywords": [
     "react",
-    "react-paginations"
+    "react-paginations",
+    "table",
+    "pagination"
   ],
   "license": "MIT"
 }
