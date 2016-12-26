@@ -8,7 +8,7 @@ class App extends Component {
         full: {
             page: 1,
             pageLength: 10,
-            totalRecords: 100000
+            totalRecords: 1000 * 1000
         },
         reduced: {
             page: 1,
