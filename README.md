@@ -25,6 +25,8 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
 
 ## Usage
 
+#### TablePagination
+
 ```js
 <TablePagination
     type="full"
