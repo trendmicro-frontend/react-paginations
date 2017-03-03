@@ -23267,6 +23267,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -23344,7 +23346,9 @@ var TablePagination = (_temp2 = _class = function (_Component) {
                 prevPageRenderer = _props.prevPageRenderer,
                 nextPageRenderer = _props.nextPageRenderer,
                 pageRecordsRenderer = _props.pageRecordsRenderer,
-                pageLengthRenderer = _props.pageLengthRenderer;
+                pageLengthRenderer = _props.pageLengthRenderer,
+                className = _props.className,
+                props = _objectWithoutProperties(_props, ['type', 'totalRecords', 'pageLengthMenu', 'prevPageRenderer', 'nextPageRenderer', 'pageRecordsRenderer', 'pageLengthRenderer', 'className']);
 
             var pageLength = this.props.pageLength || pageLengthMenu[0] || 10;
             var totalPages = totalRecords > 0 ? Math.ceil(totalRecords / pageLength) : 1;
@@ -23354,9 +23358,15 @@ var TablePagination = (_temp2 = _class = function (_Component) {
             var prevPageDisabled = page <= 1;
             var nextPageDisabled = page >= totalPages;
 
+            delete props.pageLength;
+            delete props.page;
+            delete props.onPageChange;
+
             return _react2.default.createElement(
                 'div',
-                { className: _index2.default.tablePagination },
+                _extends({}, props, {
+                    className: (0, _classnames2.default)(className, _index2.default.tablePagination)
+                }),
                 _react2.default.createElement(
                     'div',
                     { className: _index2.default.tablePaginationBlock },
@@ -24243,4 +24253,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?4ba7d267141c3e7a0650
+//# sourceMappingURL=bundle.js.map?5e84e64d27591aaaa9b3
