@@ -95,8 +95,11 @@ class TablePagination extends Component {
             prevPageRenderer,
             nextPageRenderer,
             pageRecordsRenderer,
-            pageLengthRenderer
+            pageLengthRenderer,
+            className,
+            ...props
         } = this.props;
+
         const pageLength = this.props.pageLength || pageLengthMenu[0] || 10;
         const totalPages = totalRecords > 0 ? Math.ceil(totalRecords / pageLength) : 1;
         const page = limit(this.props.page, 1, totalPages);
@@ -105,8 +108,15 @@ class TablePagination extends Component {
         const prevPageDisabled = (page <= 1);
         const nextPageDisabled = (page >= totalPages);
 
+        delete props.pageLength;
+        delete props.page;
+        delete props.onPageChange;
+
         return (
-            <div className={styles.tablePagination}>
+            <div
+                {...props}
+                className={classNames(className, styles.tablePagination)}
+            >
                 <div className={styles.tablePaginationBlock}>
                     <div className={styles.paginationRecords}>
                         {pageRecordsRenderer({ totalRecords, from, to })}
