@@ -1,0 +1,52 @@
+.section-group {
+    margin-bottom: 12px;
+}
+
+table {
+    background: transparent;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+th {
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                padding: 8px 12px;
+                line-height: 20px;
+                vertical-align: top;
+                border-top: 1px solid #ddd;
+            }
+        }
+    }
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            > th,
+            > td {
+                border: 1px solid #ddd;
+            }
+        }
+    }
+    > thead > tr {
+        > th,
+        > td {
+            border-bottom-width: 2px;
+        }
+    }
+}
