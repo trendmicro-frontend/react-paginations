@@ -1,6 +1,7 @@
 {
   "name": "@trendmicro/react-paginations",
   "description": "Trend Micro Components: React Paginations",
+  "theme": "minimalism",
   "authors": [
     {
       "name": "Cheton Wu",
@@ -9,7 +10,11 @@
     }
   ],
   "homepage": "https://github.com/trendmicro-frontend/react-paginations",
-  "snapshots": [],
+  "snapshots": [
+    "./snapshots/full.png",
+    "./snapshots/reduced.png",
+    "./snapshots/minor.png"
+  ],
   "keywords": [
     "react",
     "react-paginations",
