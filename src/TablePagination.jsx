@@ -1,7 +1,8 @@
 /* eslimt react/no-set-state: 0 */
 import Anchor from '@trendmicro/react-anchor';
 import classNames from 'classnames';
-import React, { Component, PropTypes } from 'react';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import AutosizeInput from 'react-input-autosize';
 import styles from './index.styl';
 
