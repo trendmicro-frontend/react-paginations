@@ -3,7 +3,7 @@ import Anchor from '@trendmicro/react-anchor';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import AutosizeInput from 'react-input-autosize';
+import AutosizeInput from './AutosizeInput';
 import styles from './index.styl';
 
 // Normalize the value by bringing it within the range.
