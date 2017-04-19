@@ -21926,142 +21926,6 @@ module.exports = validateDOMNesting;
 
 /***/ }),
 
-/***/ "../node_modules/react-input-autosize/lib/AutosizeInput.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
-var React = __webpack_require__("../node_modules/react/react.js");
-
-var sizerStyle = { position: 'absolute', top: 0, left: 0, visibility: 'hidden', height: 0, overflow: 'scroll', whiteSpace: 'pre' };
-
-var AutosizeInput = React.createClass({
-	displayName: 'AutosizeInput',
-
-	propTypes: {
-		className: React.PropTypes.string, // className for the outer element
-		defaultValue: React.PropTypes.any, // default field value
-		inputClassName: React.PropTypes.string, // className for the input element
-		inputStyle: React.PropTypes.object, // css styles for the input element
-		minWidth: React.PropTypes.oneOfType([// minimum width for input element
-		React.PropTypes.number, React.PropTypes.string]),
-		onChange: React.PropTypes.func, // onChange handler: function(newValue) {}
-		placeholder: React.PropTypes.string, // placeholder text
-		placeholderIsMinWidth: React.PropTypes.bool, // don't collapse size to less than the placeholder
-		style: React.PropTypes.object, // css styles for the outer element
-		value: React.PropTypes.any },
-	// field value
-	getDefaultProps: function getDefaultProps() {
-		return {
-			minWidth: 1
-		};
-	},
-	getInitialState: function getInitialState() {
-		return {
-			inputWidth: this.props.minWidth
-		};
-	},
-	componentDidMount: function componentDidMount() {
-		this.copyInputStyles();
-		this.updateInputWidth();
-	},
-	componentDidUpdate: function componentDidUpdate() {
-		this.updateInputWidth();
-	},
-	copyInputStyles: function copyInputStyles() {
-		if (!this.isMounted() || !window.getComputedStyle) {
-			return;
-		}
-		var inputStyle = window.getComputedStyle(this.refs.input);
-		if (!inputStyle) {
-			return;
-		}
-		var widthNode = this.refs.sizer;
-		widthNode.style.fontSize = inputStyle.fontSize;
-		widthNode.style.fontFamily = inputStyle.fontFamily;
-		widthNode.style.fontWeight = inputStyle.fontWeight;
-		widthNode.style.fontStyle = inputStyle.fontStyle;
-		widthNode.style.letterSpacing = inputStyle.letterSpacing;
-		if (this.props.placeholder) {
-			var placeholderNode = this.refs.placeholderSizer;
-			placeholderNode.style.fontSize = inputStyle.fontSize;
-			placeholderNode.style.fontFamily = inputStyle.fontFamily;
-			placeholderNode.style.fontWeight = inputStyle.fontWeight;
-			placeholderNode.style.fontStyle = inputStyle.fontStyle;
-			placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
-		}
-	},
-	updateInputWidth: function updateInputWidth() {
-		if (!this.isMounted() || typeof this.refs.sizer.scrollWidth === 'undefined') {
-			return;
-		}
-		var newInputWidth = undefined;
-		if (this.props.placeholder && (!this.props.value || this.props.value && this.props.placeholderIsMinWidth)) {
-			newInputWidth = Math.max(this.refs.sizer.scrollWidth, this.refs.placeholderSizer.scrollWidth) + 2;
-		} else {
-			newInputWidth = this.refs.sizer.scrollWidth + 2;
-		}
-		if (newInputWidth < this.props.minWidth) {
-			newInputWidth = this.props.minWidth;
-		}
-		if (newInputWidth !== this.state.inputWidth) {
-			this.setState({
-				inputWidth: newInputWidth
-			});
-		}
-	},
-	getInput: function getInput() {
-		return this.refs.input;
-	},
-	focus: function focus() {
-		this.refs.input.focus();
-	},
-	blur: function blur() {
-		this.refs.input.blur();
-	},
-	select: function select() {
-		this.refs.input.select();
-	},
-	render: function render() {
-		var sizerValue = this.props.defaultValue || this.props.value || '';
-		var wrapperStyle = this.props.style || {};
-		if (!wrapperStyle.display) wrapperStyle.display = 'inline-block';
-		var inputStyle = _extends({}, this.props.inputStyle);
-		inputStyle.width = this.state.inputWidth + 'px';
-		inputStyle.boxSizing = 'content-box';
-		var inputProps = _extends({}, this.props);
-		inputProps.className = this.props.inputClassName;
-		inputProps.style = inputStyle;
-		// ensure props meant for `AutosizeInput` don't end up on the `input`
-		delete inputProps.inputClassName;
-		delete inputProps.inputStyle;
-		delete inputProps.minWidth;
-		delete inputProps.placeholderIsMinWidth;
-		return React.createElement(
-			'div',
-			{ className: this.props.className, style: wrapperStyle },
-			React.createElement('input', _extends({}, inputProps, { ref: 'input' })),
-			React.createElement(
-				'div',
-				{ ref: 'sizer', style: sizerStyle },
-				sizerValue
-			),
-			this.props.placeholder ? React.createElement(
-				'div',
-				{ ref: 'placeholderSizer', style: sizerStyle },
-				this.props.placeholder
-			) : null
-		);
-	}
-});
-
-module.exports = AutosizeInput;
-
-/***/ }),
-
 /***/ "../node_modules/react/lib/KeyEscapeUtils.js":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25852,6 +25716,269 @@ module.exports = g;
 
 /***/ }),
 
+/***/ "../src/AutosizeInput.jsx":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _class, _temp2; //
+// Forked from https://github.com/JedWatson/react-input-autosize
+//
+
+
+var _propTypes = __webpack_require__("../node_modules/prop-types/index.js");
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _react = __webpack_require__("../node_modules/react/react.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var sizerStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    visibility: 'hidden',
+    height: 0,
+    overflow: 'scroll',
+    whiteSpace: 'pre'
+};
+
+var AutosizeInput = (_temp2 = _class = function (_Component) {
+    _inherits(AutosizeInput, _Component);
+
+    function AutosizeInput() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
+        _classCallCheck(this, AutosizeInput);
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AutosizeInput.__proto__ || Object.getPrototypeOf(AutosizeInput)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            inputWidth: _this.props.minWidth
+        }, _this.nodes = {
+            input: null,
+            sizer: null,
+            placeholderSizer: null
+        }, _this._isMounted = false, _temp), _possibleConstructorReturn(_this, _ret);
+    }
+
+    _createClass(AutosizeInput, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this._isMounted = true;
+            this.copyInputStyles();
+            this.updateInputWidth();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            this._isMounted = false;
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate(prevProps, prevState) {
+            if (prevState.inputWidth !== this.state.inputWidth) {
+                if (typeof this.props.onAutosize === 'function') {
+                    this.props.onAutosize(this.state.inputWidth);
+                }
+            }
+            this.updateInputWidth();
+        }
+    }, {
+        key: 'copyInputStyles',
+        value: function copyInputStyles() {
+            if (!this._isMounted || !window.getComputedStyle) {
+                return;
+            }
+
+            var inputStyle = window.getComputedStyle(this.nodes.input);
+            if (!inputStyle) {
+                return;
+            }
+
+            var widthNode = this.nodes.sizer;
+            widthNode.style.fontSize = inputStyle.fontSize;
+            widthNode.style.fontFamily = inputStyle.fontFamily;
+            widthNode.style.fontWeight = inputStyle.fontWeight;
+            widthNode.style.fontStyle = inputStyle.fontStyle;
+            widthNode.style.letterSpacing = inputStyle.letterSpacing;
+
+            if (this.props.placeholder) {
+                var placeholderNode = this.nodes.placeholderSizer;
+                placeholderNode.style.fontSize = inputStyle.fontSize;
+                placeholderNode.style.fontFamily = inputStyle.fontFamily;
+                placeholderNode.style.fontWeight = inputStyle.fontWeight;
+                placeholderNode.style.fontStyle = inputStyle.fontStyle;
+                placeholderNode.style.letterSpacing = inputStyle.letterSpacing;
+            }
+        }
+    }, {
+        key: 'updateInputWidth',
+        value: function updateInputWidth() {
+            if (!this._isMounted || typeof this.nodes.sizer.scrollWidth === 'undefined') {
+                return;
+            }
+            var newInputWidth = void 0;
+            if (this.props.placeholder && (!this.props.value || this.props.value && this.props.placeholderIsMinWidth)) {
+                newInputWidth = Math.max(this.nodes.sizer.scrollWidth, this.nodes.placeholderSizer.scrollWidth) + 2;
+            } else {
+                newInputWidth = this.nodes.sizer.scrollWidth + 2;
+            }
+            if (newInputWidth < this.props.minWidth) {
+                newInputWidth = this.props.minWidth;
+            }
+            if (newInputWidth !== this.state.inputWidth) {
+                this.setState({
+                    inputWidth: newInputWidth
+                });
+            }
+        }
+    }, {
+        key: 'getInput',
+        value: function getInput() {
+            return this.nodes.input;
+        }
+    }, {
+        key: 'focus',
+        value: function focus() {
+            this.nodes.input.focus();
+        }
+    }, {
+        key: 'blur',
+        value: function blur() {
+            this.nodes.input.blur();
+        }
+    }, {
+        key: 'select',
+        value: function select() {
+            this.nodes.input.select();
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            var sizerValue = [this.props.defaultValue, this.props.value, ''].reduce(function (previousValue, currentValue) {
+                if (previousValue !== null && previousValue !== undefined) {
+                    return previousValue;
+                }
+                return currentValue;
+            });
+
+            var wrapperStyle = this.props.style || {};
+            if (!wrapperStyle.display) {
+                wrapperStyle.display = 'inline-block';
+            }
+
+            var inputStyle = Object.assign({}, this.props.inputStyle);
+            inputStyle.width = this.state.inputWidth + 'px';
+            inputStyle.boxSizing = 'content-box';
+
+            var inputProps = Object.assign({}, this.props);
+            inputProps.className = this.props.inputClassName;
+            inputProps.style = inputStyle;
+
+            // ensure props meant for `AutosizeInput` don't end up on the `input`
+            delete inputProps.inputClassName;
+            delete inputProps.inputStyle;
+            delete inputProps.minWidth;
+            delete inputProps.placeholderIsMinWidth;
+
+            return _react2.default.createElement(
+                'div',
+                { className: this.props.className, style: wrapperStyle },
+                _react2.default.createElement('input', _extends({}, inputProps, {
+                    ref: function ref(node) {
+                        _this2.nodes.input = node;
+                    }
+                })),
+                _react2.default.createElement(
+                    'div',
+                    {
+                        ref: function ref(node) {
+                            _this2.nodes.sizer = node;
+                        },
+                        style: sizerStyle
+                    },
+                    sizerValue
+                ),
+                this.props.placeholder && _react2.default.createElement(
+                    'div',
+                    {
+                        ref: function ref(node) {
+                            _this2.nodes.placeholderSizer = node;
+                        },
+                        style: sizerStyle
+                    },
+                    this.props.placeholder
+                )
+            );
+        }
+    }]);
+
+    return AutosizeInput;
+}(_react.Component), _class.propTypes = {
+    // className for the outer element
+    className: _propTypes2.default.string,
+
+    // default field value
+    defaultValue: _propTypes2.default.any,
+
+    // className for the input element
+    inputClassName: _propTypes2.default.string,
+
+    // css style for the input element
+    inputStyle: _propTypes2.default.object,
+
+    // minimum width for input element
+    minWidth: _propTypes2.default.oneOfType([_propTypes2.default.number, _propTypes2.default.string]),
+
+    // onAutosize handler: function(newWidth) {}
+    onAutosize: _propTypes2.default.func,
+
+    // onChange handler: function(newValue) {}
+    onChange: _propTypes2.default.func,
+
+    // placeholder text
+    placeholder: _propTypes2.default.string,
+
+    // don't collapse size to less than the placeholder
+    placeholderIsMinWidth: _propTypes2.default.bool,
+
+    // css styles fro the outer element
+    style: _propTypes2.default.object,
+
+    // field value
+    value: _propTypes2.default.any
+}, _class.defaultProps = {
+    minWidth: 1
+}, _temp2);
+exports.default = AutosizeInput;
+
+/***/ }),
+
 /***/ "../src/TablePagination.jsx":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25885,9 +26012,9 @@ var _react = __webpack_require__("../node_modules/react/react.js");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactInputAutosize = __webpack_require__("../node_modules/react-input-autosize/lib/AutosizeInput.js");
+var _AutosizeInput = __webpack_require__("../src/AutosizeInput.jsx");
 
-var _reactInputAutosize2 = _interopRequireDefault(_reactInputAutosize);
+var _AutosizeInput2 = _interopRequireDefault(_AutosizeInput);
 
 var _index = __webpack_require__("../src/index.styl");
 
@@ -26048,7 +26175,7 @@ var TablePagination = (_temp2 = _class = function (_Component) {
                     type !== 'reduced' && type !== 'minor' && _react2.default.createElement(
                         'div',
                         { className: _index2.default.paginationInput },
-                        _react2.default.createElement(_reactInputAutosize2.default, {
+                        _react2.default.createElement(_AutosizeInput2.default, {
                             value: this.state.page,
                             onChange: function onChange(event) {
                                 var page = Number(event.target.value);
@@ -26887,4 +27014,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?ad9275d3e5b278d932ef
+//# sourceMappingURL=bundle.js.map?24fe064fbc56f45c0fa9
