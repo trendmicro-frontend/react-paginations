@@ -25892,11 +25892,11 @@ var AutosizeInput = (_temp2 = _class = function (_Component) {
                 wrapperStyle.display = 'inline-block';
             }
 
-            var inputStyle = Object.assign({}, this.props.inputStyle);
+            var inputStyle = _extends({}, this.props.inputStyle);
             inputStyle.width = this.state.inputWidth + 'px';
             inputStyle.boxSizing = 'content-box';
 
-            var inputProps = Object.assign({}, this.props);
+            var inputProps = _extends({}, this.props);
             inputProps.className = this.props.inputClassName;
             inputProps.style = inputStyle;
 
@@ -27014,4 +27014,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?24fe064fbc56f45c0fa9
+//# sourceMappingURL=bundle.js.map?c8fc73099f2361973d59
