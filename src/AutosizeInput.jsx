@@ -2,7 +2,7 @@
 // Forked from https://github.com/JedWatson/react-input-autosize
 //
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 const sizerStyle = {
     position: 'absolute',
@@ -14,7 +14,7 @@ const sizerStyle = {
     whiteSpace: 'pre'
 };
 
-class AutosizeInput extends Component {
+class AutosizeInput extends PureComponent {
     static propTypes = {
         // className for the outer element
         className: PropTypes.string,

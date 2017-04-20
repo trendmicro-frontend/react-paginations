@@ -2,7 +2,7 @@
 import Anchor from '@trendmicro/react-anchor';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import AutosizeInput from './AutosizeInput';
 import styles from './index.styl';
 
@@ -14,7 +14,7 @@ const limit = (value, min, max) => {
     return Math.max(min, Math.min(max, value));
 };
 
-class TablePagination extends Component {
+class TablePagination extends PureComponent {
     static propTypes = {
         type: PropTypes.oneOf(['full', 'reduced', 'minor']),
         page: PropTypes.number,

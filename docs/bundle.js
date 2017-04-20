@@ -25761,8 +25761,8 @@ var sizerStyle = {
     whiteSpace: 'pre'
 };
 
-var AutosizeInput = (_temp2 = _class = function (_Component) {
-    _inherits(AutosizeInput, _Component);
+var AutosizeInput = (_temp2 = _class = function (_PureComponent) {
+    _inherits(AutosizeInput, _PureComponent);
 
     function AutosizeInput() {
         var _ref;
@@ -25939,7 +25939,7 @@ var AutosizeInput = (_temp2 = _class = function (_Component) {
     }]);
 
     return AutosizeInput;
-}(_react.Component), _class.propTypes = {
+}(_react.PureComponent), _class.propTypes = {
     // className for the outer element
     className: _propTypes2.default.string,
 
@@ -26040,8 +26040,8 @@ var limit = function limit(value, min, max) {
     return Math.max(min, Math.min(max, value));
 };
 
-var TablePagination = (_temp2 = _class = function (_Component) {
-    _inherits(TablePagination, _Component);
+var TablePagination = (_temp2 = _class = function (_PureComponent) {
+    _inherits(TablePagination, _PureComponent);
 
     function TablePagination() {
         var _ref;
@@ -26261,7 +26261,7 @@ var TablePagination = (_temp2 = _class = function (_Component) {
     }]);
 
     return TablePagination;
-}(_react.Component), _class.propTypes = {
+}(_react.PureComponent), _class.propTypes = {
     type: _propTypes2.default.oneOf(['full', 'reduced', 'minor']),
     page: _propTypes2.default.number,
     pageLength: _propTypes2.default.number,
@@ -27014,4 +27014,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?c8fc73099f2361973d59
+//# sourceMappingURL=bundle.js.map?5b28526aac14d9b93201
