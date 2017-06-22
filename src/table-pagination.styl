@@ -1,14 +1,17 @@
 @import "variables";
 
 .table-pagination {
-
-    &.pull-right {
-        float: right;
+    // https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+    box-sizing: border-box;
+    *, *:before, *:after {
+        box-sizing: inherit;
     }
-    
+
     .table-pagination-block {
         margin-left: 8px;
         margin-right: 8px;
+
+        clearfix();
 
         > div {
             margin-top: 8px;
