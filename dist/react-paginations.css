@@ -1,4 +1,4 @@
-/*! react-paginations v0.5.10 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-paginations */
+/*! react-paginations v0.5.11 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-paginations */
 .paginations---pagination---2Rb5b {
   display: inline-block;
   padding-left: 0;
@@ -84,12 +84,30 @@
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
   filter: alpha(opacity=40);
 }
-.paginations---table-pagination---41TU-.paginations---pull-right---2juGH {
-  float: right;
+.paginations---table-pagination---41TU- {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.paginations---table-pagination---41TU- *,
+.paginations---table-pagination---41TU- *:before,
+.paginations---table-pagination---41TU- *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
 }
 .paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH {
   margin-left: 8px;
   margin-right: 8px;
+  zoom: 1;
+}
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH:before,
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH:after {
+  content: "";
+  display: table;
+}
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH:after {
+  clear: both;
 }
 .paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH > div {
   margin-top: 8px;
