@@ -26794,6 +26794,15 @@ var App = function (_Component) {
                                                 null,
                                                 _react2.default.createElement(
                                                     'td',
+                                                    { colSpan: '2', style: { background: '#fefefe' } },
+                                                    'Dropup'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'tr',
+                                                null,
+                                                _react2.default.createElement(
+                                                    'td',
                                                     { style: { width: '50%', padding: 0 } },
                                                     _react2.default.createElement(_src.TablePagination, {
                                                         type: 'full',
@@ -26814,6 +26823,55 @@ var App = function (_Component) {
                                                     { style: { width: '50%', padding: 0 } },
                                                     _react2.default.createElement(_src.TablePagination, {
                                                         type: 'full',
+                                                        page: 1,
+                                                        pageLength: state.full.pageLength,
+                                                        totalRecords: 0,
+                                                        onPageChange: actions.full.onPageChange,
+                                                        prevPageRenderer: function prevPageRenderer() {
+                                                            return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+                                                        },
+                                                        nextPageRenderer: function nextPageRenderer() {
+                                                            return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+                                                        }
+                                                    })
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'tr',
+                                                null,
+                                                _react2.default.createElement(
+                                                    'td',
+                                                    { colSpan: '2', style: { background: '#fefefe' } },
+                                                    'Dropup'
+                                                )
+                                            ),
+                                            _react2.default.createElement(
+                                                'tr',
+                                                null,
+                                                _react2.default.createElement(
+                                                    'td',
+                                                    { style: { width: '50%', padding: 0 } },
+                                                    _react2.default.createElement(_src.TablePagination, {
+                                                        type: 'full',
+                                                        dropup: true,
+                                                        page: state.full.page,
+                                                        pageLength: state.full.pageLength,
+                                                        totalRecords: state.full.totalRecords,
+                                                        onPageChange: actions.full.onPageChange,
+                                                        prevPageRenderer: function prevPageRenderer() {
+                                                            return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+                                                        },
+                                                        nextPageRenderer: function nextPageRenderer() {
+                                                            return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+                                                        }
+                                                    })
+                                                ),
+                                                _react2.default.createElement(
+                                                    'td',
+                                                    { style: { width: '50%', padding: 0 } },
+                                                    _react2.default.createElement(_src.TablePagination, {
+                                                        type: 'full',
+                                                        dropup: true,
                                                         page: 1,
                                                         pageLength: state.full.pageLength,
                                                         totalRecords: 0,
@@ -26977,29 +27035,6 @@ var App = function (_Component) {
                                             )
                                         )
                                     )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: _index2.default.sectionGroup },
-                                    _react2.default.createElement(
-                                        'h5',
-                                        null,
-                                        'Dropup'
-                                    ),
-                                    _react2.default.createElement(_src.TablePagination, {
-                                        type: 'full',
-                                        dropup: true,
-                                        page: state.full.page,
-                                        pageLength: state.full.pageLength,
-                                        totalRecords: state.full.totalRecords,
-                                        onPageChange: actions.full.onPageChange,
-                                        prevPageRenderer: function prevPageRenderer() {
-                                            return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
-                                        },
-                                        nextPageRenderer: function nextPageRenderer() {
-                                            return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
-                                        }
-                                    })
                                 )
                             )
                         )
@@ -27044,4 +27079,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?c4136445b4bf3ff995e0
+//# sourceMappingURL=bundle.js.map?2ee5e329e531d4fa2674
