@@ -75,7 +75,7 @@ class App extends Component {
                 <div className="container-fluid" style={{ padding: '20px 20px 0' }}>
                     <div className="row">
                         <div className="col-md-12">
-                            <Section className="row-md-8">
+                            <Section className="row-md-9">
                                 <h3>Table Pagination</h3>
                                 <div className={styles.sectionGroup}>
                                     <h5>Full</h5>
@@ -199,6 +199,19 @@ class App extends Component {
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div className={styles.sectionGroup}>
+                                    <h5>Dropup</h5>
+                                    <TablePagination
+                                        type="full"
+                                        dropup
+                                        page={state.full.page}
+                                        pageLength={state.full.pageLength}
+                                        totalRecords={state.full.totalRecords}
+                                        onPageChange={actions.full.onPageChange}
+                                        prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                        nextPageRenderer={() => <i className="fa fa-angle-right" />}
+                                    />
                                 </div>
                             </Section>
                         </div>

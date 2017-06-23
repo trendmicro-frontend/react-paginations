@@ -26750,7 +26750,7 @@ var App = function (_Component) {
                             { className: 'col-md-12' },
                             _react2.default.createElement(
                                 _Section2.default,
-                                { className: 'row-md-8' },
+                                { className: 'row-md-9' },
                                 _react2.default.createElement(
                                     'h3',
                                     null,
@@ -26977,6 +26977,29 @@ var App = function (_Component) {
                                             )
                                         )
                                     )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: _index2.default.sectionGroup },
+                                    _react2.default.createElement(
+                                        'h5',
+                                        null,
+                                        'Dropup'
+                                    ),
+                                    _react2.default.createElement(_src.TablePagination, {
+                                        type: 'full',
+                                        dropup: true,
+                                        page: state.full.page,
+                                        pageLength: state.full.pageLength,
+                                        totalRecords: state.full.totalRecords,
+                                        onPageChange: actions.full.onPageChange,
+                                        prevPageRenderer: function prevPageRenderer() {
+                                            return _react2.default.createElement('i', { className: 'fa fa-angle-left' });
+                                        },
+                                        nextPageRenderer: function nextPageRenderer() {
+                                            return _react2.default.createElement('i', { className: 'fa fa-angle-right' });
+                                        }
+                                    })
                                 )
                             )
                         )
@@ -27021,4 +27044,4 @@ if(false) {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map?83d8a4c3bead1989cc23
+//# sourceMappingURL=bundle.js.map?c4136445b4bf3ff995e0
