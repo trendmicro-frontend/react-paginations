@@ -33,7 +33,26 @@
             margin-top: 14px;
             margin-bottom: 14px;
 
-            .btn {
+            &.dropup {
+                .dropdown-toggle {
+                    .caret {
+                        border-top: 0;
+                        border-bottom: 4px dashed #666;
+                    }
+                    &:hover .caret {
+                        border-top-color: transparent;
+                        border-bottom-color: $link-color;
+                    }
+                }
+
+                .dropdown-menu {
+                    top: auto;
+                    bottom: 27px;
+                    left: 16px;
+                }
+            }
+
+            .dropdown-toggle {
                 background-color: transparent;
                 border: 0;
                 border-color: transparent;
@@ -63,11 +82,13 @@
                 }
                 &:hover .caret {
                     border-top-color: $link-color;
+                    border-bottom-color: transparent;
                 }
             }
 
             .dropdown-menu {
                 top: 27px;
+                bottom: auto;
                 left: 16px;
             }
         }

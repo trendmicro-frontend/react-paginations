@@ -20,6 +20,7 @@ class TablePagination extends PureComponent {
         page: PropTypes.number,
         pageLength: PropTypes.number,
         pageLengthMenu: PropTypes.array,
+        dropup: PropTypes.bool,
         totalRecords: PropTypes.number,
         onPageChange: PropTypes.func,
         prevPageRenderer: PropTypes.func,
@@ -32,6 +33,7 @@ class TablePagination extends PureComponent {
         page: 1,
         pageLength: 10,
         pageLengthMenu: [10, 25, 50, 100],
+        dropup: false,
         totalRecords: 0,
         onPageChange: () => {},
         prevPageRenderer: () => {
@@ -91,6 +93,7 @@ class TablePagination extends PureComponent {
     render() {
         const {
             type,
+            dropup,
             totalRecords = 0,
             pageLengthMenu,
             prevPageRenderer,
@@ -126,15 +129,15 @@ class TablePagination extends PureComponent {
                     <div
                         className={classNames(
                             styles.dropdown,
-                            { [styles.open]: this.state.shouldOpenDropdownMenu }
+                            {
+                                [styles.dropup]: dropup,
+                                [styles.open]: this.state.shouldOpenDropdownMenu
+                            }
                         )}
                     >
                         <button
                             type="button"
-                            className={classNames(
-                                styles.btn,
-                                styles.dropdownToggle
-                            )}
+                            className={styles.dropdownToggle}
                             onClick={this.actions.toggleDropdownMenu}
                             onBlur={this.actions.closeDropdownMenu}
                         >
