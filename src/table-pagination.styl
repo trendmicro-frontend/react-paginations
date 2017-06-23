@@ -1,13 +1,8 @@
 @import "variables";
+@import "reset-context";
 
 .table-pagination {
-    // https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-    box-sizing: border-box;
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
-
-    line-height: 20px;
+    reset-context();
 
     .table-pagination-block {
         margin-left: 8px;
@@ -50,7 +45,7 @@
                 text-align: left;
                 text-decoration: none;
                 outline: none;
-                line-height: 18px;
+                line-height: $btn-line-height;
 
                 .caret {
                     display: inline-block;
@@ -88,7 +83,7 @@
                 text-align: center;
                 border: 1px solid #ccc;
                 border-radius: 3px;
-                line-height: 20px;
+                line-height: $input-line-height;
 
                 &:focus {
                     border: 1px solid #0096cc;
