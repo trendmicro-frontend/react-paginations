@@ -92,6 +92,11 @@ class App extends Component {
                                         </thead>
                                         <tbody>
                                             <tr>
+                                                <td colSpan="2" style={{ background: '#fefefe' }}>
+                                                    Dropup
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td style={{ width: '50%', padding: 0 }}>
                                                     <TablePagination
                                                         type="full"
@@ -106,6 +111,37 @@ class App extends Component {
                                                 <td style={{ width: '50%', padding: 0 }}>
                                                     <TablePagination
                                                         type="full"
+                                                        page={1}
+                                                        pageLength={state.full.pageLength}
+                                                        totalRecords={0}
+                                                        onPageChange={actions.full.onPageChange}
+                                                        prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                                        nextPageRenderer={() => <i className="fa fa-angle-right" />}
+                                                    />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colSpan="2" style={{ background: '#fefefe' }}>
+                                                    Dropup
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style={{ width: '50%', padding: 0 }}>
+                                                    <TablePagination
+                                                        type="full"
+                                                        dropup
+                                                        page={state.full.page}
+                                                        pageLength={state.full.pageLength}
+                                                        totalRecords={state.full.totalRecords}
+                                                        onPageChange={actions.full.onPageChange}
+                                                        prevPageRenderer={() => <i className="fa fa-angle-left" />}
+                                                        nextPageRenderer={() => <i className="fa fa-angle-right" />}
+                                                    />
+                                                </td>
+                                                <td style={{ width: '50%', padding: 0 }}>
+                                                    <TablePagination
+                                                        type="full"
+                                                        dropup
                                                         page={1}
                                                         pageLength={state.full.pageLength}
                                                         totalRecords={0}
@@ -199,19 +235,6 @@ class App extends Component {
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                                <div className={styles.sectionGroup}>
-                                    <h5>Dropup</h5>
-                                    <TablePagination
-                                        type="full"
-                                        dropup
-                                        page={state.full.page}
-                                        pageLength={state.full.pageLength}
-                                        totalRecords={state.full.totalRecords}
-                                        onPageChange={actions.full.onPageChange}
-                                        prevPageRenderer={() => <i className="fa fa-angle-left" />}
-                                        nextPageRenderer={() => <i className="fa fa-angle-right" />}
-                                    />
                                 </div>
                             </Section>
                         </div>
