@@ -1,6 +1,6 @@
 {
   "name": "@trendmicro/react-paginations",
-  "version": "0.5.13",
+  "version": "0.6.0",
   "description": "Trend Micro Components: React Paginations",
   "main": "lib/index.js",
   "files": [

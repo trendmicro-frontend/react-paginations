@@ -1,4 +1,4 @@
-/*! react-paginations v0.5.13 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-paginations */
+/*! react-paginations v0.6.0 | (c) 2017 Trend Micro Inc. | MIT | https://github.com/trendmicro-frontend/react-paginations */
 .paginations---pagination---2Rb5b {
   display: inline-block;
   padding-left: 0;
@@ -133,7 +133,20 @@
   margin-top: 14px;
   margin-bottom: 14px;
 }
-.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---btn---2jZHN {
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ.paginations---dropup---30DnN .paginations---dropdown-toggle---vMtjL .paginations---caret---3CkEt {
+  border-top: 0;
+  border-bottom: 4px dashed #666;
+}
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ.paginations---dropup---30DnN .paginations---dropdown-toggle---vMtjL:hover .paginations---caret---3CkEt {
+  border-top-color: transparent;
+  border-bottom-color: #0096cc;
+}
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ.paginations---dropup---30DnN .paginations---dropdown-menu---1fkH0 {
+  top: auto;
+  bottom: 27px;
+  left: 16px;
+}
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---dropdown-toggle---vMtjL {
   background-color: transparent;
   border: 0;
   border-color: transparent;
@@ -148,7 +161,7 @@
   outline: none;
   line-height: 18px;
 }
-.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---btn---2jZHN .paginations---caret---3CkEt {
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---dropdown-toggle---vMtjL .paginations---caret---3CkEt {
   display: inline-block;
   width: 0;
   height: 0;
@@ -158,14 +171,16 @@
   border-left: 4px solid transparent;
   margin-left: 8px;
 }
-.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---btn---2jZHN:hover {
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---dropdown-toggle---vMtjL:hover {
   color: #0096cc;
 }
-.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---btn---2jZHN:hover .paginations---caret---3CkEt {
+.paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---dropdown-toggle---vMtjL:hover .paginations---caret---3CkEt {
   border-top-color: #0096cc;
+  border-bottom-color: transparent;
 }
 .paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---dropdown---1yvIZ .paginations---dropdown-menu---1fkH0 {
   top: 27px;
+  bottom: auto;
   left: 16px;
 }
 .paginations---table-pagination---41TU- .paginations---table-pagination-block---Cx6IH .paginations---pagination-input---2C8oD {
