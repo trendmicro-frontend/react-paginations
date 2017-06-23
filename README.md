@@ -47,78 +47,19 @@ Demo: https://trendmicro-frontend.github.io/react-paginations
 
 #### TablePagination
 
-<table>
-  <thead>
-    <tr>
-      <th align="left">Name</th>
-      <th align="left">Type</th>
-      <th align="left">Default</th>
-      <th align="left">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>type</td>
-      <td>String</td>
-      <td>'full'</td>
-      <td>'full', 'reduced', or 'minor'</td>
-    </tr>
-    <tr>
-      <td>page</td>
-      <td>Number</td>
-      <td>1</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>pageLength</td>
-      <td>Number</td>
-      <td>10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>pageLengthMenu</td>
-      <td>Array</td>
-      <td>[10, 25, 50, 100]</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>totalRecords</td>
-      <td>Number</td>
-      <td>0</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>onPageChange</td>
-      <td>Function</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>prevPageRenderer</td>
-      <td>Function</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>nextPageRenderer</td>
-      <td>Function</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>pageRecordsRenderer</td>
-      <td>Function({ totalRecords, from, to })</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>pageLengthRenderer</td>
-      <td>Function({ pageLength })</td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
-</table>
+Name | Type | Default | Description 
+:--- | :--- | :------ | :----------
+type | String | 'full' | 'full', 'reduced', or 'minor'
+page | Number | 1 |
+pageLength | Number | 10 |
+pageLengthMenu | Array | [10, 25, 50, 100] |
+dropup | Boolean | false | The menu will open above the dropdown toggle, instead of below it.
+totalRecords | Number | 0 |
+onPageChange | Function | |
+prevPageRenderer | Function | |
+nextPageRenderer | Function | |
+pageRecordsRenderer | Function({ totalRecords, from, to }) | |
+pageLengthRenderer | Function({ pageLength }) |
 
 ## License
 
