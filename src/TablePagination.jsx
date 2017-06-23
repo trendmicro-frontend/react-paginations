@@ -20,7 +20,10 @@ class TablePagination extends PureComponent {
         page: PropTypes.number,
         pageLength: PropTypes.number,
         pageLengthMenu: PropTypes.array,
+
+        // The menu will open above the dropdown toggle, instead of below it.
         dropup: PropTypes.bool,
+
         totalRecords: PropTypes.number,
         onPageChange: PropTypes.func,
         prevPageRenderer: PropTypes.func,
