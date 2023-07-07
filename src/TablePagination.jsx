@@ -88,9 +88,9 @@ class TablePagination extends PureComponent {
         }
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.page !== this.state.page) {
-            this.setState({ page: Number(nextProps.page) });
+    componentDidUpdate(prevProps) {
+        if (prevProps.page !== this.props.page && this.props.page !== this.state.page) {
+            this.setState({ page: Number(this.props.page) });
         }
     }
     render() {
